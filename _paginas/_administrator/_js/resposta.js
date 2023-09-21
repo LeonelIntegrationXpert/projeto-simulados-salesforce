@@ -316,37 +316,23 @@ function questions() {
       ],
       "videos": []
     },
-    {
-      "question": "Quais são os planetas do sistema solar?",
-      "type": "radio",
-      "options": [
-        "Mercúrio",
-        "Vênus",
-        "Terra",
-        "Marte",
-        "Júpiter",
-        "Saturno",
-        "Urano",
-        "Netuno"
-      ],
-      "correctAnswer": [0, 1, 2, 3, 4, 5, 6, 7],
-      "justification": "Os planetas do sistema solar são: Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano e Netuno.",
-      "referenceLinks": [
-        "https://www.example.com/reference7",
-        "https://www.example.com/reference8",
-        "https://www.example.com/reference9"
-      ],
-      "screenshots": [
-        "https://www.example.com/screenshot7.png",
-        "https://www.example.com/screenshot8.png",
-        "https://www.example.com/screenshot9.png"
-      ],
-      "videos": [
-        "https://www.example.com/video7.mp4",
-        "https://www.example.com/video8.mp4",
-        "https://www.example.com/video9.mp4"
-      ]
-    }
+	{
+	  "question": "Cosmic Software Solutions uses Salesforce for lead management. The record page created for leads consists of several custom fields and sections. They need to be configured as individual components such that different types of users only see the fields and sections that they require. For example, a section consisting of five custom fields, which allow specifying contact information, should only be visible to sales users. Which feature should be used to meet this requirement?",
+	  "type": "radio",
+	  "options": [
+		"A. Dynamic Forms",
+		"B. Dynamic Interactions",
+		"C. Page Layouts",
+		"D. Lightning Web Component"
+	  ],
+	  "correctAnswer": 0,
+	  "justification": '<p> <span class="quiz-answer"><em>Dynamic Forms allow migrating the fields and sections from an existing record page as individual components in the Lightning App Builder. These components can then be configured the same way as the other components on the page so that users can view only the fields and sections they should be able to access. Dynamic Forms is supported for custom objects, accounts (including person accounts), cases, contacts, leads, and opportunities. </em> </span> </p><p><em>Dynamic Interactions is a feature used when an event occurring in one component on a Lightning page, such as the user clicking an item in a list view, should update other components on the page. Creating a custom Lightning Web Component for this requirement is unnecessary and would require programmatic development. Page Layouts do not support configuring visibility for specific fields and sections on a page.</em> </p><p><strong>Objective:</strong> Configuration and Setup<br><strong>Detailed Objective:</strong> Distinguish and understand the administration of declarative configuration of the User Interface </p>',
+	  "referenceLinks": [
+		"https://help.salesforce.com/s/articleView?id=sf.dynamic_forms_overview.htm&type=5"
+	  ],
+	  "screenshots": [],
+	  "videos": []
+	}
   ];
 
   return questionsData;
