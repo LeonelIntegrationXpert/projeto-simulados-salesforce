@@ -52,10 +52,9 @@ function getHeader() {
             Administrator
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/index.html">Configuration and Setup (Objectives 1-2) - Admin</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives1-2/index.html">Configuration and Setup (Objectives 1-2)</a></li>
+            <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives3-4/index.html">Configuration and Setup (Objectives 3-4)</a></li>
+            <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives5-6/index.html">Configuration and Setup (Objectives 5-6)</a></li>
           </ul>
         </li>
       </ul>
@@ -64,6 +63,56 @@ function getHeader() {
 </nav>`;
 }
 
+function getFooter() {
+  return `
+    <footer>
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span></span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Contact -->
+      <section class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-lg-start">
+              <p>Autor do site: Leonel Dorneles Porto | LinkedIn: <a href="https://www.linkedin.com/in/leonel-dorneles-porto-b88600122/" class="text-reset fw-bold">Leonel Dorneles Porto</a> | Celular: (53) 991056367</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact -->
+    </footer>
+  `;
+}
 
 function showDropdown(element) {
   element.classList.add("open");

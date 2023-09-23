@@ -10,22 +10,56 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="./_paginas/_js/resposta.js"></script>
     <title>Home Page</title>
+    <style>
+        .correct-answer {
+            color: green;
+        }
+        #justification {
+            display: none;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #questions-container {
+            width: 100%;
+            max-width: 600px;
+        }
+        .row {
+            justify-content: center;
+        }
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
 <div id="headerContainer"></div>
 
-  <script>
+<script>
     // Chama a função getHeader() e insere o resultado no elemento com o id "headerContainer"
-    document.getElementById("headerContainer").innerHTML = getHeader();
-  </script>
-  
-<div style="text-align: center; margin: 0 10% 0 10%">
-    <h1>Home Page</h1></br>
-</div>
-    <br><br><br>
-    <!-- Inclua os arquivos JavaScript do Bootstrap -->
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("headerContainer").innerHTML = getHeader();
+    });
+</script>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<div class="container">
+    <h1 class="text-center">Home Page</h1>
+    <br><br><br>
+</div>
+
+<div id="footerContainer"></div>
+<script>
+    // Chama a função getFooter() e insere o resultado no elemento com o id "footerContainer"
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("footerContainer").innerHTML = getFooter();
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
