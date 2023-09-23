@@ -434,7 +434,7 @@ function updateReferences(referenceLinks) {
 
 // Função para atualizar a captura de tela
 function updateScreenshot(screenshot) {
-	printScreenshotList();
+    printScreenshotList();
 }
 
 // Função para atualizar o vídeo
@@ -463,7 +463,6 @@ function printScreenshotList() {
     }
   }
 }
-
 
 // Exporte a função questions
 function questions() {
@@ -499,7 +498,23 @@ function questions() {
         "D. Lightning Web Component"
       ],
       "correctAnswer": 0,
-      "justification": '<p> <span class="quiz-answer"><em>Dynamic Forms allow migrating the fields and sections from an existing record page as individual components in the Lightning App Builder. These components can then be configured the same way as the other components on the page so that users can view only the fields and sections they should be able to access. Dynamic Forms is supported for custom objects, accounts (including person accounts), cases, contacts, leads, and opportunities. </em> </span> </p><p><em>Dynamic Interactions is a feature used when an event occurring in one component on a Lightning page, such as the user clicking an item in a list view, should update other components on the page. Creating a custom Lightning Web Component for this requirement is unnecessary and would require programmatic development. Page Layouts do not support configuring visibility for specific fields and sections on a page.</em> </p><p><strong>Objective:</strong> Configuration and Setup<br><strong>Detailed Objective:</strong> Distinguish and understand the administration of declarative configuration of the User Interface </p>',
+      "justification": 
+        '<p>' +
+            '<span class="quiz-answer">' +
+                '<em>' + 
+                    'Dynamic Forms allow migrating the fields and sections from an existing record page as individual components in the Lightning App Builder. These components can then be configured the same way as the other components on the page so that users can view only the fields and sections they should be able to access. Dynamic Forms is supported for custom objects, accounts (including person accounts), cases, contacts, leads, and opportunities.\n' +
+                '</em>' +
+            '</span>' +
+        '</p>\n' +
+        '<p>' + 
+            '<em>' +
+                'Dynamic Interactions is a feature used when an event occurring in one component on a Lightning page, such as the user clicking an item in a list view, should update other components on the page. Creating a custom Lightning Web Component for this requirement is unnecessary and would require programmatic development. Page Layouts do not support configuring visibility for specific fields and sections on a page.' +
+            '</em>'+ 
+        '</p>\n' +
+        '<p>' + 
+            '<strong>Objective:</strong>Configuration and Setup<br>' + 
+            '<strong>Detailed Objective:</strong> Distinguish and understand the administration of declarative configuration of the User Interface' + 
+		'</p>',
       "referenceLinks": [
         "https://help.salesforce.com/s/articleView?id=sf.dynamic_forms_overview.htm&type=5"
       ],
