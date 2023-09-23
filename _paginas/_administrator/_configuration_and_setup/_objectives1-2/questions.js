@@ -14,7 +14,18 @@ function questions() {
         "E. Set the currency for each profile"
       ],
       "correctAnswer": [0, 2, 3],
-      "justification": "Exchange rates are not dated by default when multi-currency is enabled. The Advanced Currency Management feature must be selected if the company needs to track dated exchange rates. As a requirement for dated exchange rates was not specified, Advanced Currency Management is an optional step. Setting a currency for each profile is also not necessary.",
+      "justification": 
+        '<p>' +
+            '<span class="quiz-answer">' +
+                '<em>' + 
+                    'Exchange rates are not dated by default when multi-currency is enabled. The Advanced Currency Management feature must be selected if the company needs to track dated exchange rates. As a requirement for dated exchange rates was not specified, Advanced Currency Management is an optional step. Setting a currency for each profile is also not necessary.\n' +
+                '</em>' +
+            '</span>' +
+        '</p>\n' +
+        '<p>' + 
+            '<strong>Objective:</strong>Configuration and Setup<br>' + 
+            '<strong>Detailed Objective:</strong> Describe the information found in the company settings' + 
+		'</p>',
       "referenceLinks": [
         "https://help.salesforce.com/articleView?id=sf.admin_currency.htm&type=5",
         "https://help.salesforce.com/articleView?id=sf.editing_conversion_rates.htm&type=5"
@@ -67,12 +78,28 @@ function questions() {
         "D. The user should customize the navigation bar of the app."
       ],
       "correctAnswer": 3,
-      "justification": '<span class="quiz-answer"><em>A Salesforce Administrator could modify the access to a tab for a profile but not for an individual user. There is no auto-hide feature for rarely used tabs. Each app can have a different set of tabs. Users can be assigned to different apps. In Lightning Experience, the App Launcher can be utilized to switch between apps.</em></span> <p><em>Users can add, remove, rename, and reorder tabs that are displayed by default by personalizing the navigation bar of an app in Lightning Experience. Default tabs that are specified by the Salesforce Administrator cannot be removed or renamed. Users cannot create profiles or Apps only the Administrator can do this also, it is not the required solution for this scenario.</em> </p> <p><strong>Objective:</strong> Configuration and Setup<br><strong>Detailed Objective:</strong> Distinguish and understand the administration of declarative configuration of the User Interface </p>',
+      "justification": 
+        '<p>' +
+            '<span class="quiz-answer">' +
+                '<em>' + 
+                    'A Salesforce Administrator could modify the access to a tab for a profile but not for an individual user. There is no auto-hide feature for rarely used tabs. Each app can have a different set of tabs. Users can be assigned to different apps. In Lightning Experience, the App Launcher can be utilized to switch between apps.\n' +
+                '</em>' +
+            '</span>' +
+        '</p>\n' +
+        '<p>' + 
+            '<em>' +
+                'Users can add, remove, rename, and reorder tabs that are displayed by default by personalizing the navigation bar of an app in Lightning Experience. Default tabs that are specified by the Salesforce Administrator cannot be removed or renamed. Users cannot create profiles or Apps only the Administrator can do this also, it is not the required solution for this scenario.' +
+            '</em>'+ 
+        '</p>\n' +
+        '<p>' + 
+            '<strong>Objective:</strong>Configuration and Setup<br>' + 
+            '<strong>Detailed Objective:</strong> Distinguish and understand the administration of declarative configuration of the User Interface' + 
+		'</p>',
       "referenceLinks": [
         "https://help.salesforce.com/s/articleView?id=sf.dynamic_forms_overview.htm&type=5","https://help.salesforce.com/s/articleView?id=sf.dynamic_forms_overview.htm&type=5"
       ],
       "screenshots": ["https://cdn.focusonforce.com/wp-content/uploads/2020/01/edit-app-items.png","https://cdn.focusonforce.com/wp-content/uploads/question-screenshots/qms-156-image1.png"],
-      "videos": []
+      "videos": ["https://cdn.focusonforce.com/wp-content/uploads/question-videos/explanation_151220210200100.mp4"]
     }
   ];
 
