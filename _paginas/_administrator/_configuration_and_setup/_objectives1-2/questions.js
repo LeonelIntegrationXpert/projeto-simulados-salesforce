@@ -33,6 +33,7 @@ function shuffleOptionsAndQuestions(questionsData) {
       }
     }
 
+    questionsData[i].options = options.map((option, index) => String.fromCharCode(65 + index) + ". " + option);
     questionsData[i].correctAnswer = correctAnswer;
   }
 
@@ -44,13 +45,13 @@ var questionsData = [
     "question": "Global Shipping does business in a number of different countries but wants to report in a single currency. The Salesforce Administrator is considering enabling multi-currency. What additional steps must be taken after multi-currency is enabled?",
     "type": "checkbox",
     "options": [
-      "A. Set the corporate currency",
-      "B. Set the validity dates for the exchange rates",
-      "C. Define the list of currencies and make them active",
-      "D. Set the exchange rates for the currencies",
-      "E. Set the currency for each profile"
+      "Set the corporate currency",
+      "Set the validity dates for the exchange rates",
+      "Define the list of currencies and make them active",
+      "Set the exchange rates for the currencies",
+      "Set the currency for each profile"
     ],
-    "correctAnswer": [0, 1, 2],
+    "correctAnswer": [0, 2, 3],
     "justification": 
       '<p>' +
           '<span class="quiz-answer">' +
@@ -76,10 +77,10 @@ var questionsData = [
     "question": "Cosmic Software Solutions uses Salesforce for lead management. The record page created for leads consists of several custom fields and sections. They need to be configured as individual components such that different types of users only see the fields and sections that they require. For example, a section consisting of five custom fields, which allow specifying contact information, should only be visible to sales users. Which feature should be used to meet this requirement?",
     "type": "radio",
     "options": [
-      "A. Dynamic Forms",
-      "B. Dynamic Interactions",
-      "C. Page Layouts",
-      "D. Lightning Web Component"
+      "Dynamic Forms",
+      "Dynamic Interactions",
+      "Page Layouts",
+      "Lightning Web Component"
     ],
     "correctAnswer": 0,
     "justification": 
@@ -109,10 +110,10 @@ var questionsData = [
     "question": "A Salesforce user has approached the Administrator informing him that she wants to hide certain tabs in the navigation bar. What should the Salesforce Administrator suggest to her?",
     "type": "radio",
     "options": [
-      "A. The administrator should remove access to the tab at the user level.",
-      "B. The user should create a new profile or App",
-      "C. The user should enable the 'auto-hide' feature for rarely used tabs.",
-      "D. The user should customize the navigation bar of the app."
+      "The administrator should remove access to the tab at the user level.",
+      "The user should create a new profile or App",
+      "The user should enable the 'auto-hide' feature for rarely used tabs.",
+      "The user should customize the navigation bar of the app."
     ],
     "correctAnswer": 3,
     "justification": 
