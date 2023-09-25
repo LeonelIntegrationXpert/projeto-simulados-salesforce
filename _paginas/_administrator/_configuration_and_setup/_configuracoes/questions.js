@@ -1,40 +1,34 @@
-var randomic = true;
-
 function shuffleOptionsAndQuestions(questionsData) {
-  if (randomic) {
-    for (var i = questionsData.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var tempQuestion = questionsData[i];
-      questionsData[i] = questionsData[j];
-      questionsData[j] = tempQuestion;
-    }
+  for (var i = questionsData.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tempQuestion = questionsData[i];
+    questionsData[i] = questionsData[j];
+    questionsData[j] = tempQuestion;
   }
 
   for (var i = 0; i < questionsData.length; i++) {
     var options = questionsData[i].options;
     var correctAnswer = questionsData[i].correctAnswer;
 
-    if (randomic) {
-      for (var j = options.length - 1; j > 0; j--) {
-        var k = Math.floor(Math.random() * (j + 1));
-        var tempOption = options[j];
-        options[j] = options[k];
-        options[k] = tempOption;
+    for (var j = options.length - 1; j > 0; j--) {
+      var k = Math.floor(Math.random() * (j + 1));
+      var tempOption = options[j];
+      options[j] = options[k];
+      options[k] = tempOption;
 
-        if (Array.isArray(correctAnswer)) {
-          for (var l = 0; l < correctAnswer.length; l++) {
-            if (correctAnswer[l] === j) {
-              correctAnswer[l] = k;
-            } else if (correctAnswer[l] === k) {
-              correctAnswer[l] = j;
-            }
+      if (Array.isArray(correctAnswer)) {
+        for (var l = 0; l < correctAnswer.length; l++) {
+          if (correctAnswer[l] === j) {
+            correctAnswer[l] = k;
+          } else if (correctAnswer[l] === k) {
+            correctAnswer[l] = j;
           }
-        } else {
-          if (correctAnswer === j) {
-            correctAnswer = k;
-          } else if (correctAnswer === k) {
-            correctAnswer = j;
-          }
+        }
+      } else {
+        if (correctAnswer === j) {
+          correctAnswer = k;
+        } else if (correctAnswer === k) {
+          correctAnswer = j;
         }
       }
     }
@@ -48,6 +42,7 @@ function shuffleOptionsAndQuestions(questionsData) {
     questionsData[i].options = options.map((option, index) => String.fromCharCode(65 + index) + ". " + option);
     questionsData[i].correctAnswer = correctAnswer;
   }
+
   return questionsData;
 }
 
