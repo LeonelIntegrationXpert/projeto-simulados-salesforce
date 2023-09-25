@@ -261,9 +261,15 @@ function createQuestions() {
   } else {
     $("#previous-button").show();
   }
-
-  // Desabilita o botão "Próximo"
-  $("#next-button").prop("disabled", true);
+  
+  // Desabilita o botão "Próximo" se for a última pergunta
+  if (currentQuestionIndex === questionsData.length - 1) {
+    $("#next-button").hide();
+    // Faça algo quando chegar à última posição
+    console.log("Chegou à última posição!");
+  } else {
+    $("#next-button").show();
+  }
 
   // Esconde os containers de referências, capturas de tela e vídeo
   $(".references-container").hide();
