@@ -1,4 +1,13 @@
-var randomic = true;
+var randomic = true; // Valor inicial da variável randomic
+
+var result = window.confirm("Deseja perguntas e respostas aleatórias?");
+if (result) {
+  randomic = true;
+  alert("Você escolheu perguntas e respostas aleatórias!");
+} else {
+  randomic = false;
+  alert("Você escolheu perguntas e respostas não aleatórias!");
+}
 
 function shuffleOptionsAndQuestions(questionsData) {
   if (randomic) {
