@@ -230,7 +230,7 @@ function createQuestions() {
   // Cria o elemento de pergunta
   var questionElement = $("<div>");
   questionElement.addClass("mt-3");
-  questionElement.append("<p><strong>Question " + (currentQuestionIndex + 1) + ":</strong> " + questionsData[currentQuestionIndex].question + "</p>");
+  questionElement.append("<p><strong>Question " + (currentQuestionIndex + 1) + "/" + questionsData.length + ":</strong> " + questionsData[currentQuestionIndex].question + "</p>");
 
   // Cria os elementos de opções de resposta
   for (var j = 0; j < questionsData[currentQuestionIndex].options.length; j++) {
