@@ -33,6 +33,12 @@ function shuffleOptionsAndQuestions(questionsData) {
       }
     }
 
+    if (questionsData[i].type === "radio") {
+      questionsData[i].question += " (select 1 answer)";
+    } else if (questionsData[i].type === "checkbox") {
+      questionsData[i].question += " (select up to " + correctAnswer.length + " answers)";
+    }
+
     questionsData[i].options = options.map((option, index) => String.fromCharCode(65 + index) + ". " + option);
     questionsData[i].correctAnswer = correctAnswer;
   }
@@ -61,7 +67,7 @@ var questionsData = [
           '</span>' +
       '</p>\n' +
       '<p>' + 
-          '<strong>Objective:</strong>Configuration and Setup<br>' + 
+          '<strong>Objective:</strong> Configuration and Setup<br>' + 
           '<strong>Detailed Objective:</strong> Describe the information found in the company settings' + 
       '</p>',
     "referenceLinks": [
@@ -97,7 +103,7 @@ var questionsData = [
           '</em>'+ 
       '</p>\n' +
       '<p>' + 
-          '<strong>Objective:</strong>Configuration and Setup<br>' + 
+          '<strong>Objective:</strong> Configuration and Setup<br>' + 
           '<strong>Detailed Objective:</strong> Distinguish and understand the administration of declarative configuration of the User Interface' + 
       '</p>',
     "referenceLinks": [
@@ -130,7 +136,7 @@ var questionsData = [
           '</em>'+ 
       '</p>\n' +
       '<p>' + 
-          '<strong>Objective:</strong>Configuration and Setup<br>' + 
+          '<strong>Objective:</strong> Configuration and Setup<br>' + 
           '<strong>Detailed Objective:</strong> Distinguish and understand the administration of declarative configuration of the User Interface' + 
       '</p>',
     "referenceLinks": [
