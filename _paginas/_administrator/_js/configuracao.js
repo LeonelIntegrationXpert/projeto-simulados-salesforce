@@ -361,14 +361,17 @@ function checkAnswer() {
   $("#justification").show();
 }
 
-// Função para comparar dois arrays
+// Função para verificar se dois arrays têm os mesmos elementos, independentemente da ordem
 function arraysEqual(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
 
-  for (var i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
+  var sortedArr1 = arr1.slice().sort();
+  var sortedArr2 = arr2.slice().sort();
+
+  for (var i = 0; i < sortedArr1.length; i++) {
+    if (sortedArr1[i] !== sortedArr2[i]) {
       return false;
     }
   }
