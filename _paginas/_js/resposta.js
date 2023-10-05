@@ -57,6 +57,14 @@ function getHeader() {
             <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives5-6/index.html">Configuration and Setup (Objectives 5-6)</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mulesoft
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="./_paginas/_mcd/_official_training_test/_test_training_1/index.html">MCD - LEVEL 1 (Training platform)</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>

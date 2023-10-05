@@ -55,9 +55,9 @@ function getHeader() {
                 Administrator
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="../_objectives1-2/index.html">Configuration and Setup (Objectives 1-2)</a></li>
-                <li><a class="dropdown-item" href="../_objectives3-4/index.html">Configuration and Setup (Objectives 3-4)</a></li>
-				<li><a class="dropdown-item" href="../_objectives5-6/index.html">Configuration and Setup (Objectives 5-6)</a></li>
+                <li><a class="dropdown-item" href="../../../_administrator/_configuration_and_setup/_objectives1-2/index.html">Configuration and Setup (Objectives 1-2)</a></li>
+                <li><a class="dropdown-item" href="../../../_administrator/_configuration_and_setup/_objectives3-4/index.html">Configuration and Setup (Objectives 3-4)</a></li>
+				<li><a class="dropdown-item" href="../../../_administrator/_configuration_and_setup/_objectives5-6/index.html">Configuration and Setup (Objectives 5-6)</a></li>
               </ul>
             </li>
 			<li class="nav-item dropdown">
@@ -65,7 +65,7 @@ function getHeader() {
 				Mulesoft
 			  </a>
 			  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<li><a class="dropdown-item" href="../../../_mcd/_official_training_test/_test_training_1/index.html">MCD - LEVEL 1 (Training platform)</a></li>
+				<li><a class="dropdown-item" href="../_test_training_1/index.html">MCD - LEVEL 1 (Training platform)</a></li>
 			  </ul>
 			</li>
           </ul>
