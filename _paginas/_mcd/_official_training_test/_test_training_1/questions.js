@@ -767,6 +767,201 @@ var questionsData = [
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
+  },
+  {
+    "question": "Refer to exhibit. The Mule application does NOT define any global error handlers. The main flow is configured with three error handlers.</br>A web client submits a request to the HTTP Listener and the HTTP Request throws and HTTP:NOT_FOUND error.</br>What response message is returned?</br><img src='./_images/43.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "Success - main flow",
+      "HTTP:NOT_FOUND",
+      "APP:API_RESOURCE_NOT_FOUND",
+	  "Other error"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to exhibit. The main flow of this Mule application uses an HTTP connector operation and two JMS connector operations.</br>The Mule application in run and starts successfully, and then a local web client sends a request to http://localhost:8081/.</br>What payload is then returned to the web client from the Mule application?</br><img src='./_images/44.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "1",
+      "2",
+      "3",
+	  "4"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "In an application network, the implementation, not the interface, of a product API is being changed.</br>Does anything need to change in the other APIs or the associated applications that consume the product API, and if so, what are these changes?",
+    "type": "radio",
+    "options": [
+	  "The other APIs must be updated to consume the updated product API",
+      "The applications associated with the other APIs must be recorded",
+      "Nothing needs to be changed in the other APIs or their associated applications",
+	  "The applications associated with the other APIs must be restarted"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A Utility.dwl file is located in a Mule project at src/main/resources/modules.</br>The Utility.dwl file defines a function named pascalize that reformats strings to pascal case.</br>What is valid DataWeave code to call the pascalize function in a Transform Message component?",
+    "type": "radio",
+    "options": [
+	  "</br><img src='./_images/45.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+      "</br><img src='./_images/46.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+      "</br><img src='./_images/47.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+	  "</br><img src='./_images/48.png' alt='Ilustração' style='position: relative; max-width: 100%;'>"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to exhibits. The main flow contains an HTTP Request. The HTTP Listeners and HTTP Request use default configurations.</br>A web client sends a GET request to the main flow's HTTP Listener that includes a modelName query parameter.</br>What values(s) are accessible in the child flow?</br><img src='./_images/49.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "The payload</br>The modelName query param",
+      "The payload</br>The planModel var",
+      "The payload",
+	  "The payload</br>The modelName query param</br>The planeModel var"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to exhibits. The orders.csv file is read and then processed to look up the orders ins a database.The Mule application is debugged in Anypoint Studio and stops at the breakpoint.</br>What is payload is shown in the debugged at this breakpoint?</br><img src='./_images/50.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "100",
+      "An empty array",
+      "The database response",
+	  "The entire CSV file"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to exhibits. In the payload of a POST request to this Mule application, a web client sends a new order record {'oid':'100','custId':'annie@acme.com','status':'NEW ORDER'}.</br>In this Mule application, what value must be used in the Input Parameters field of the Database insert operation to properly pass the order record values to the SQL statement?</br><img src='./_images/51.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "</br><img src='./_images/52.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+      "</br><img src='./_images/53.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+      "</br><img src='./_images/54.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+	  "</br><img src='./_images/55.png' alt='Ilustração' style='position: relative; max-width: 100%;'>"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to exhibits. The Mule application does NOT define any global error handler elements.</br>What is the response to a web client request to http:localhost:8081?</br><img src='./_images/56.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "Validation Error",
+      "After",
+      "Before",
+	  "null"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A database table contains a recordID column that increases as new  records get added to the table.</br>A Mule application is created to read from this database table.</br>What is the key process to enable manual watermarking for requests to this database table using a Scheduler event source and a Database Select operation?",
+    "type": "radio",
+    "options": [
+	  "Enable automatic watermarking in the Database Select operation",
+      "Save the max recordID from the set of recordIDs in a variable and reference this variable in subsequent database requests",
+      "Save the max recordID from the set of recordIDs in an Object Store and reference this recordID in subsequent database requests",
+	  "Set Watermarking column in the Scheduler to the recordID"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A batch job is defined by a Batch Job scope that contains three batch steps. The Batch Job scope and Batch Step scopes are configured  with default acceptPolicy values.</br>An event processor in the second Batch Step scope throws an error because the input data is incomplete.</br>What is the default behavior of the batch job after the error is thrown?",
+    "type": "radio",
+    "options": [
+	  "The second Batch Step scope is retried with the same data",
+      "The Batch Job scope stops processing all records",
+      "The second Batch Step scope's error is reserved and the repaired records are passed to the third Batch Step scope for processing",
+	  "All existing in-flight records are discarded, but new records are still passed to the first Batch Step scope and processed"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An event contains a payload that is and array of objects.</br>How is the event routed in a Scatter-Gather?",
+    "type": "radio",
+    "options": [
+	  "The is split and events with different smaller payloads are routed and processed in parallel",
+      "The entired event is sent to each route and processed sequentially",
+      "The entired event is sent to each route and processed in parallel",
+	  "The event is split and events with different smaller payloads are routed and processed sequentially"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to exhibit. This RAML file generates an error.</br>What needs to be done to make this valid RAML?</br><img src='./_images/57.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "Indent the get method under the {flight_id} resource",
+      "Remove in the blank line on row 7",
+      "Enclose the {flight_id} resource in parentheses () instead of curty {}",
+	  "Outdent the {flight_id} resource"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A RAML specification is defined to manage customers with a unique identifier for each customer record.</br>What URI does MuleSoft recommend to uniquely access the customer identified with the unique ID 1234?",
+    "type": "radio",
+    "options": [
+	  "/customers?operation=get&custid=1234",
+      "/customers/custid=1234",
+      "/customers/1234",
+	  "/customers?custid=true&custid=1234"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
   }
 ];
 
