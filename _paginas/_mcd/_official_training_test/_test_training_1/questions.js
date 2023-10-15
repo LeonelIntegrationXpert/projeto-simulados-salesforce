@@ -574,7 +574,7 @@ var questionsData = [
     "videos": []
   },
   {
-    "question": "Refer to the exhibit.</br>What can be added to the flow to persist data across different flow executions?</br><img src='./_images/18.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+    "question": "Refer to the exhibit.</br>What can be added to the flow to persist data across different flow executions?</br><img src='./_images/18.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
     "type": "radio",
     "options": [
 	  "Session variables",
@@ -958,6 +958,681 @@ var questionsData = [
 	  "/customers?custid=true&custid=1234"
     ],
     "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. What is the correct DataWeave expression for accessing the city Cleveland from the JSON payload?</br><img src='./_images/58.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "#[payload.city[1]]",
+      "#[payload[2].city]",
+      "#[payload[1].city]",
+	  "#[payload.city[2]]"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A flow contains an HTTP Listener as the event source. What is the DataWeave expression to log the Content-Type header using a Logger component?",
+    "type": "radio",
+    "options": [
+	  "#['Content-Type: ' + headers.'content-type']",
+      "#['Content-Type: ' ++ attributes.headers.'content-type']",
+      "#['Content-Type: ' ++ headers.'content-type']",
+	  "#['Content-Type: ' + attributes.headers.'content-type']"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A web service implements an API to handle requests to http://acme.com/customers/{state}.</br>A web client makes a request to this API implementation at http://acme.com/customers/CA.</br>What is the correct DataWeave expression to retrieve the value CA?",
+    "type": "radio",
+    "options": [
+	  "#[attributes.'http.uri.params'.state]",
+      "#[attributes.uriParams.state]",
+      "#[message.inboundProperties.'http.uri.params'.state]",
+	  "#[state]",
+	  "#[message.payload.inboundProperties.'http.uri.params'.state]"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A Mule application has two flows named parentFlow and childFlow. The childFlow begins with an HTTP Listener.</br>A variable is defined in parentFlow, then an HTTP Request is made to childFlow's HTTP Listener with some headers set.</br>What is the scope of the variable and attributes in the parentFlow after childFlow returns a response?",
+    "type": "radio",
+    "options": [
+	  "The variable is NOT accessible. All the attributes passed to childFlow are removed or replaced.",
+      "The variable is accessible. All the attributes passed to childFlow are removed or replaced.",
+      "The variable is NOT accessible. All the attributes passed to childFlow are preserved.",
+	  "The variable is accessible. All the attributes passed to childFlow are preserved."
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A Set Variable component saves the current payload to a variable with the name images. What is the DataWeave expression to access the images variable?",
+    "type": "radio",
+    "options": [
+	  "#[flowVars.images]",
+      "#[vars.images]",
+      "#[images]",
+	  "#[payload.images]"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A Mule application has a flow named parentFlow.</br>The parentFlow contains an HTTP Request operation at the end of the flow. The parentFlow also contains a Set Variable operation right before the HTTP Request operation.</br>What is the scope of the variable to the server receiving the HTTP Request from parentFlow?",
+    "type": "radio",
+    "options": [
+	  "The variable is accessible in the server but is immutable",
+      "The variable is accessible in the server, can be changed, but changes are NOT seen back in parentFlow",
+      "The variable is NOT accessible in the server",
+	  "The variable is accessible in the server, can be changed, and changes are seen back in parentFlow"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What is NOT part of a Mule 4 event?",
+    "type": "radio",
+    "options": [
+	  "outboundProperties",
+      "message",
+      "payload",
+	  "variables",
+	  "attributes"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What happens to the attributes of a Mule event in a flow after an outbound HTTP Request is made?",
+    "type": "radio",
+    "options": [
+	  "Attributes do not change",
+      "New attributes may be added from the HTTP response headers, but no headers are ever removed",
+      "New attributes may be added from the HTTP response, but previous attributes are passed through unchanged",
+	  "Attributes are replaced with new attributes from the HTTP Request response (which might be null)"
+    ],
+    "correctAnswer": 3,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Why must a Mule application's deployable archive package all its dependencies in order to be deployed to CloudHub?",
+    "type": "radio",
+    "options": [
+	  "CloudHub workers needs to compare the current dependencies with the LATEST project dependencies from the MuleSoft repository",
+      "The online logging service requires access to ALL project dependencies to log the appropriate Java classes used in the Mule application",
+      "CloudHub workers CANNOT download ALL possible project dependencies a project may contain",
+	  "MuleSoft support requires access to ALL project dependencies for future online troubleshooting"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. In the deployable archive's /classes folder, there are two properties files named dev.properties and prod.properties. The Mule application fails to deploy to CloudHub through Runtime Manager with the following error message.</br>What could be causing this error?</br><img src='./_images/59.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "The property files were NOT saved at the root level of the deployable archive",
+      "The env property is NOT set in the Runtime Manager in the Mule application's Properties tab",
+      "A file named ${env}.properties is NOT included in the deployable archive file",
+	  "The dev.properties and prod.properties files were NOT uploaded to Runtime Manager"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "In what file does the Mule project keep track of all of its dependencies?",
+    "type": "radio",
+    "options": [
+	  "global.xml",
+      "mule-artifact.json",
+      "pom.xml",
+	  "mule-app.properties"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What reserved property can be defined and used in a Mule application to allow an HTTPS Listener to be accessed by external web clients after the Mule application is deployed to CloudHub?",
+    "type": "radio",
+    "options": [
+	  "${https.port}",
+      "${https.listener.port}",
+      "${ssl.listener.port}",
+	  "${ssl.port}"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A Mule application has two flows named parentFlow and childFlow. A variable is defined in parentFlow.</br>What is the scope of the variable when the parentFlow calls childFlow using a Flow Reference?",
+    "type": "radio",
+    "options": [
+	  "The variable is accessible in childFlow, can be changed, and changes are seen back in parentFlow",
+      "The variable is accessible in childFlow, can be changed, but changes are NOT seen back in parentFlow",
+      "The variable is NOT accessible in childFlow",
+	  "The variable is accessible in childFlow but is immutable"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What can ONLY be done with VM connectors, and NOT with Flow References, in a single Mule application?",
+    "type": "radio",
+    "options": [
+	  "Allow a flow to pass events to another flow asynchronously",
+      "Allow a flow to pass events to another flow synchronously",
+      "Preserve the original payload when the VM connector returns a response from a flow",
+	  "Preserve variables as the Mule event gets passed to another flow"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What file type is required to configure a Web Service Consumer to consume a SOAP web service?",
+    "type": "radio",
+    "options": [
+	  "RAML",
+      "WSDL",
+      "JSON",
+	  "OAS"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What is the process to create a connector using REST Connect?",
+    "type": "radio",
+    "options": [
+	  "Develop the API in Flow Designer and publish the API to Exchange",
+      "Design the API in Anypoint Studio and upload the API to Runtime Manager",
+      "Design the API in Design Center and publish the API to Exchange",
+	  "Develop the API in Anypoint Studio and export the connector as a jar file"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "How are query parameters dynamically passed to an outbound REST request using an HTTP Request operation?",
+    "type": "radio",
+    "options": [
+	  "In the Mule event's payload",
+      "As flow variables",
+      "As URI parameters in the HTTP Request operation",
+	  "As query parameters in the HTTP Request operation",
+	  "As attributes in a Transform Message component before the HTTP Request operation",
+	  "As attributes in the HTTP Listener operation"
+    ],
+    "correctAnswer": 3,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. The flow calls a SOAP endpoint using the Consume operation of the Web Service Consumer. The SOAP service has a required input parameter.</br>What event processor can be used to build the SOAP envelope with the required argument to pass to the SOAP service?</br><img src='./_images/60.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "Set Property",
+      "Transform Message",
+      "JSON to XML",
+	  "Build SOAP",
+	  "Set Attachment"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An HTTP Request operation returns a JSON array of objects. In the Transform Message component, what is the process to convert the array of objects to an array of custom Java Account objects?",
+    "type": "radio",
+    "options": [
+	  "Change the output type to the Java Account object type",
+      "Change the input type to the Java Account object type",
+      "Add the Account object metadata to the input and the Transform Message component will automatically convert the JSON objects to Account objects",
+	  "Add the Account object metadata to the output and use the drag-and-drop feature to transform the incoming JSON data"
+    ],
+    "correctAnswer": 3,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A Scatter-Gather processes three separate HTTP requests. Each request returns a Mule event with a JSON payload.</br>What is the final output of the Scatter-Gather?",
+    "type": "radio",
+    "options": [
+	  "An Object containing all three Mule event Objects",
+      "The last JSON payload Object",
+      "The last Mule event Object",
+	  "An Object containing all three JSON payload Objects",
+	  "An Array of the three Mule event Objects",
+	  "An Array of the three JSON payload Objects"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An event contains a payload that is an Array of Objects. How is the event routed in a Scatter-Gather?",
+    "type": "radio",
+    "options": [
+	  "The event is SPLIT and different SMALLER events are routed and processed SEQUENTIALLY",
+      "The event is SPLIT and different SMALLER events are routed and processed in PARALLEL",
+      "The ENTIRE event is sent to each route and processed in PARALLEL",
+	  "The ENTIRE event is sent to each route and processed SEQUENTIALLY"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What module and operation will throw an error if a Mule event's payload is not a number?",
+    "type": "radio",
+    "options": [
+	  "Filter module's Is number operation",
+      "Validation module's Is number operation",
+      "Validation module's Is not number operation",
+	  "Filter module's Is not number operation"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "How are multiple conditions used in a Choice router to route events?",
+    "type": "radio",
+    "options": [
+	  "To route the same event to the matched route of EVERY true condition",
+      "To find the FIRST true condition, then distribute the event to the ONE matched route",
+      "To find the FIRST true condition, then route the same event to the matched route and ALL FOLLOWING routes",
+	  "To filter and aggregate the responses after copying the event to EVERY route"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibits. What happens to this flow when the Validation module's Is not null operation throws an error?</br><img src='./_images/61.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "The flow logs the error message in the console and continues processing its Mule event",
+      "The flow stops processing its Mule event and returns an error message to the HTTP Listener operation",
+      "The flow silently stops processing its Mule event",
+	  "The flow continues processing its Mule event and appends the error message to the end of the payload"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibits. The main flow has an On Error Continue scope and the private flow has an On Error Propagate scope.</br>A web client makes an HTTP GET request to the HTTP Listener. The Is number validator in the private flow then throws an error with message 'Validate - Payload is an Integer'.</br>What response message is returned to the web client?</br><img src='./_images/62.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "Success - private flow",
+      "Success - main flow",
+      "Error - private flow",
+	  "Error - main flow",
+	  "Validate - Payload is Integer"
+    ],
+    "correctAnswer": 3,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "How can an error scope be configured to catch all errors in the HTTP namespace?",
+    "type": "radio",
+    "options": [
+	  "Type: HTTP*</br>When:",
+      "Type: HTTP</br>When:",
+      "Type:</br>When: #[ error.errorType.namespace == 'HTTP' ]",
+	  "Type:</br>When: #[ contains 'HTTP' ]"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibits. The main flow has an On Error Continue scope. In the Configuration global element, default error handler is set to globalErrorHandler.</br>A web client makes an HTTP GET request to the flow's HTTP Listener. The Is number validator then throws an error with message 'Validate - Payload is an Integer'.</br>What response message is returned to the web client?</br><img src='./_images/62.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "Error - main flow",
+      "Success - End main flow",
+      "Success - Begin main flow",
+	  "Validate - Payload is an Integer",
+	  "Global Error Handler"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibits. The main flow has an On Error Continue scope with type set to HTTP:NOT_FOUND. The Mule application configures globalErrorHandler as its default error handler.</br>A web client posts a request to the HTTP Listener. The Transform Message component then throws a MULE:EXPRESSION error trying to convert the payload to application/xml.</br><img src='./_images/63.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "MAIN",
+      "Global Error Handler",
+      "The MULE:EXPRESSION error's message",
+	  "HTTP:NOT_FOUND error"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibits. The private flow has an On Error Propagate scope. In the Configuration global element, default error handler is set to globalErrorHandler.</br>A web client makes an HTTP GET request to the flow's HTTP Listener. The Is number validator in the private flow then throws an error with message 'Validate - Payload is an Integer'.</br>What response message is returned to the web client?</br><img src='./_images/64.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "Success - mainFlow",
+      "Validate - Payload is a Number",
+      "globalErrorHandler",
+	  "Error - privateFlow"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibits. The main flow has an On Error Propagate scope. In the Configuration global element, default error handler is set to globalErrorHandler.</br>A web client makes an HTTP GET request to the flow's HTTP Listener. The Is number validator then throws an error with message 'Validate - Payload is an Integer'.</br>What response message is returned to the web client?</br><img src='./_images/65.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "Success - Begin main flow",
+      "Success - End main flow",
+      "Validate - Payload is an Integer",
+	  "Error - main flow",
+	  "Global Error Handler"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. What is valid DataWeave code to transform the input JSON payload to the output XML payload?</br><img src='./_images/66.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "</br><img src='./_images/67.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+      "</br><img src='./_images/68.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+      "</br><img src='./_images/69.png' alt='Ilustração' style='position: relative; max-width: 100%;'>",
+	  "</br><img src='./_images/70.png' alt='Ilustração' style='position: relative; max-width: 100%;'>"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What DataWeave 2.0 type can be used as input to a map operation?",
+    "type": "radio",
+    "options": [
+	  "Map",
+      "Array",
+      "String",
+	  "Key",
+	  "object"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What is the correct way to format the decimal 20.3844 as a string to two decimal places?",
+    "type": "radio",
+    "options": [
+	  "20.3844 as String as format: '.0#'",
+      "20.3844 as :string {format: '.0#'}",
+      "20.3844 as :string as format: '.0#'",
+	  "20.3844 as String (format = '.0#')",
+	  "20.3844 as String {format: '.0#'}",
+	  "20.3844 as :string (format = '.0#')"
+    ],
+    "correctAnswer": 4,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A Mule application has a main flow and a combineNames flow. In the main flow, a variable named fullName is set to the object {firstName: 'Max', lastName: 'Mule'}.</br>What is valid DataWeave code to call the combineNames flow with the input object stored in the fullName variable?",
+    "type": "radio",
+    "options": [
+	  "#[ dw::Runtime::lookup( 'combineNames', vars.fullName ) ]",
+      "#[ combineNames( vars.fullName ) ]",
+      "#[ lookup( combineNames( vars.fullName ) ) ]",
+	  "#[ dw::Flow::lookup( 'combineNames', vars.fullName ) ]",
+	  "#[ lookup( 'combineNames', vars.fullName ) ]"
+    ],
+    "correctAnswer": 4,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "In the Database On Table Row operation, what does the Watermark column enable the On Table Row operation to do?",
+    "type": "radio",
+    "options": [
+	  "To enable multithreaded event processing for each record retrieved from a database",
+      "To avoid duplicate processing of records in a database",
+      "To save the payload into the ObjectStore for future reference",
+	  "To save the most recent records retrieved from a database to enable database caching"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A flow has a JMS Publish consume operation followed by a JMS Publish operation. Both of these operations have the default configurations.</br>Which operation is asynchronous (does not wait for a response before continuing to the next event processor) and which operation is synchronous (blocks and waits for a response or timeout before continuing to the next event processor)?",
+    "type": "radio",
+    "options": [
+	  "Publish consume: Asynchronous. Publish: Synchronous",
+      "Publish consume: Synchronous. Publish: Synchronous",
+      "Publish consume: Synchronous. Publish: Asynchronous",
+	  "Publish consume: Asynchronous. Publish: Asynchronous"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A Flow Reference component sends a non-empty JSON object payload to another flow named childFlow, which then returns an XML body.</br>A Flow Reference component saves the payload returned from childFlow to its target attribute named payload. Refer to the exhibit.</br>What is true about the Mule event's payload at the next event processor after the Flow Reference component?</br><img src='./_images/71.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "The payload is a non-empty Java object",
+      "The payload is null",
+      "The payload is the original JSON object",
+	  "The payload is the XML response body"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. What is the object type returned by the File List operation?</br><img src='./_images/72.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "Object of Mule event objects",
+      "Array of Mule event objects",
+      "Array of String file names",
+	  "Object of String file names"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A Batch Job scope has three batch steps and a default Max Failed Records value of 0. An event processor in the second batch step throws an error because the input data is incomplete.</br>What batch step processing occurs after the error is thrown?",
+    "type": "radio",
+    "options": [
+	  "Processing immediately proceeds to the third batch step where it processes all the records",
+      "The second batch step continues to process the rest of the records and the third batch step is skipped",
+      "Processing immediately proceeds to the third batch step where it only processes the records that were successfully processed in the second batch step",
+	  "None: all batch step processing stops immediately"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibits. What is the output of the Logger component in the Batch Job?</br><img src='./_images/73.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "[.333]</br>[1]",
+      "[.333, .667, 1, 1.333]",
+      "[.333]</br>[.667]</br> [1]</br> [1.333]",
+	  "[.333, 1]"
+    ],
+    "correctAnswer": 3,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibits. The Set Payload component sets the payload to a Map object (not an Array). The File Write operation writes out files based on this Map object.</br>How many files are written to the file system when the flow executes?</br><img src='./_images/74.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "1",
+      "0",
+      "2",
+	  "3"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. The payload [1,2,3] is passed to the Batch Job scope. In Batch_Step_1, a variable named batchStepPayload is set to the current payload.</br>What is the value of the last log message after one batch job completes?</br><img src='./_images/75.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "30",
+      "[11,12,13]",
+      "13",
+	  "33",
+	  "10"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. What are the values of the counter and stepVar variables after the Batch Job?</br><img src='./_images/76.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "counter: 1, stepVar: null",
+      "counter: 1, stepVar: 31",
+      "counter: 31, stepVar: null",
+	  "counter: 31, stepVar: 31"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. What are the values of the counter and stepVar variables in the On Complete phase?</br><img src='./_images/77.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
+    "type": "radio",
+    "options": [
+	  "counter: 1, stepVar: 31",
+      "counter: 31, stepVar: 31",
+      "counter: 31, stepVar: null",
+	  "counter: 1, stepVar: null"
+    ],
+    "correctAnswer": 3,
     "justification": "",
     "referenceLinks": [],
     "screenshots": [],
