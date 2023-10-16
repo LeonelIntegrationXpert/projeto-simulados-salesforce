@@ -1334,13 +1334,13 @@ var questionsData = [
     "question": "Refer to the exhibits. The main flow has an On Error Continue scope and the private flow has an On Error Propagate scope.</br>A web client makes an HTTP GET request to the HTTP Listener. The Is number validator in the private flow then throws an error with message 'Validate - Payload is an Integer'.</br>What response message is returned to the web client?</br><img src='./_images/62.png' alt='Ilustração' style='position: relative; max-width: 100%;'></br>",
     "type": "radio",
     "options": [
-	  "Success - private flow",
-      "Success - main flow",
-      "Error - private flow",
-	  "Error - main flow",
-	  "Validate - Payload is Integer"
+	  "Success - End main flow",
+      "Error - main flow",
+      "Global Error Handler",
+	  "Validate - Payload is an Integer",
+	  "Success - Begin main flow"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 1,
     "justification": "",
     "referenceLinks": [],
     "screenshots": [],
