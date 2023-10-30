@@ -66,6 +66,7 @@ function getHeader() {
 			  </a>
 			  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<li><a class="dropdown-item" href="../../../_mcd/_official_training_test/_test_training_1/index.html">MCD - LEVEL 1 (Training platform)</a></li>
+				<li><a class="dropdown-item" href="../../../_mcd_2/_official_training_test/_test_training_1/index.html">MCD - LEVEL 2 (Training platform)</a></li>
 				<li><a class="dropdown-item" href="../../../_mcpa/_official_training_test/_test_training_1/index.html">MCPA - LEVEL 1 (Training platform)</a></li>
 			  </ul>
 			</li>
