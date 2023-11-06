@@ -298,7 +298,7 @@ var questionsData = [
       "Use 'Set Event' to pass the input data that is needed, and keep the test cases for Flow-1 and Flow-2 independent",
 	  "Use 'After Test Case' to produce the data needed from Flow-1 test cases to pass to Flow-2 test cases"
     ],
-    "correctAnswer": 1,
+    "correctAnswer": 2,
     "justification": "",
     "referenceLinks": [],
     "screenshots": [],
