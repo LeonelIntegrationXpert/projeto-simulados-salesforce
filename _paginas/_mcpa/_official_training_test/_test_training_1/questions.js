@@ -242,6 +242,140 @@ var questionsData = [
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. A RAML definition has been proposed for a new Promotions API and has been published to Anypoint Exchange. \n" +
+        "\n" +
+        "The Marketing Department, which will be an important consumer of the Promotions API, has essential requirements and expectations that must be met. \n" +
+        "\n" +
+        "What is the most effective way to use Anypoint Platform features to involve the Marketing Department in this early API design phase?</br><img src='./_images/14.png' alt='Minha Figura'></br>",
+    "type": "radio",
+    "options": [
+      "Organize a design workshop with the DBAs of the Marketing Department in which the database schemas of the Marketing IT systems is translated into RAML</br><img src='./_images/15.png' alt='Minha Figura'></br>",
+      "Use Anypoint Studio to Implement the API as a Mule application, and then deploy that API implementation to CloudHub and ask the Marketing Department to interact with it</br><img src='./_images/16.png' alt='Minha Figura'></br>",
+      "Export an integration test suite from API designer and have the Marketing Department execute the tests in that suite to ensure they pass</br><img src='./_images/17.png' alt='Minha Figura'></br>",
+      "Ask the Marketing Department to interact with a mocking implementation of the API using the automatically generated API Console</br><img src='./_images/18.png' alt='Minha Figura'></br>"
+    ],
+    "correctAnswer": 3,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An organization is deploying its new implementation of the OrderStatus system API to multiple workers in CloudHub. This API fronts the organization's on-premises Order Management System, which is securely accessed from the OrderStatus system API.\n" +
+        "\n" +
+        "What type of error typically does NOT result in a service outage of the OrderStatus system API?",
+    "type": "radio",
+    "options": [
+      "The AWS region goes offline with a major network failure to the relevant AWS data centers",
+      "A CloudHub worker fails with an out-of-memory exception",
+      "The Order Management System is Inaccessible due to a network outage in the organization's on-premises data center",
+      "API Manager has an extended outage during the initial deployment of the API implementation"
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. Wha this true about automating interactions with Anypoint Platform using tools such as Anypoint Platform REST APIs, Anypoint CLI, the uMule Maven plugin, and API policies?</br><img src='./_images/19.png' alt='Minha Figura'></br>",
+    "type": "radio",
+    "options": [
+      "Anypoint Platform APIs can ONLY automate interactions with CloudHub, while the Mule Maven plugin is required for deployment to customer-hosted Mule runtimes",
+      "By default, the Anypoint CLI and Mule Maven plugin are NOT included in the Mule runtime, so are NOT available to be used by deployed Mule applications.",
+      "Access to Anypoint Platform APIs and Anypoint CLI can be controlled separately through the roles and permissions in Anypoint Platform, so that specific users can get access to Anypoint CLI while others get access to the platform APIs.",
+      "API policies can be applied to the Anypoint Platform APIs so that ONLY certain LOBs have access to specific functions."
+    ],
+    "correctAnswer": 1,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "For a particular REST API specification managed by API Manager, how do an API Interface, an API implementation, an API client and API policies typically Interact to invoke and process REST requests?",
+    "type": "radio",
+    "options": [
+      "The API client invokes the API interface that applies API policies before calling the API implementation to process the REST request",
+      "The API implementation invokes the API client that applies API policies before calling the API interface to process the REST request",
+      "The API interface invokes the API client that calls the API implementation to apply API policies to process the REST request",
+      "The API cliente invokes the API implementation that calls the API interface to apply API policies to process the REST request"
+    ],
+    "correctAnswer": 3,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What is a by product of the API invocation metrics available from Anypoint Platform and how can these by products be utilized?",
+    "type": "radio",
+    "options": [
+      "Data on the level of reuse of assets </br>The data are used to help measure the effectiveness of the application network",
+      "ROI metrics data automatically inferred from API usage that can be directly</br>Shared with business users</br>The data are used to help create realtime executive dashboards",
+      "API policy data that exceed a given threat threshold</br>The data are used to help proactively identify likely subsequence future policy violations",
+      "Data on past API invocations</br> The data are used to help identify anomalies and usage patterns across various APIs"
+    ],
+    "correctAnswer": 3,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A TemperatureSensors API instance is defined in API Manager in the PROD environment of the CAR_FACTORY business group.</br> An Acme TemperatureSensors Mule application implements this API instance and is deployed from Runtime Manager to the PROD environment of the CAR_FACTORY business group.",
+    "type": "radio",
+    "options": [
+      "In access management, from the top level organization information",
+      "In API Manager, from the PROD environment of the CAR_FACTORY business group",
+      "In Anypoint Exchange, from na API client application that has been approved for the TemperatureSensors API instance",
+      "In Access management from the PROD environment of the CAR_FACTORY business group"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Refer to the exhibit. An Order API must be designed that contains significant amounts of integration logic and involves the invocation of the Product API. \n" +
+        "\n" +
+        "The power relationship between the Order API and Product API is one of customer/supplier, (because the Product API is used heavily throughout the organization and is developed by a dedicated development team located in the office of the CTO). \n" +
+        "\n" +
+        "What strategy should be used to deal with the API data model of the Product API within the Order API?</br><img src='./_images/20.png' alt='Minha Figura'></br>",
+    "type": "radio",
+    "options": [
+      "Implement an anti-corruption layer in the Order API that transforms the Product API data model into internal data types of the Order API</br><img src='./_images/21.png' alt='Minha Figura'></br>",
+      "Work directly with the API data types of the Product API when implementing the integration logic of the Order API such that the Order API uses the same (unchanged) data types as the Product API</br><img src='./_images/22.png' alt='Minha Figura'></br>",
+      "Convince the development team of the Product API to adopt the API data model of the Order API such that the integration logic of the Order API can work with one consistent internal data model</br><img src='./_images/23.png' alt='Minha Figura'></br>",
+      "Start an organization-wide data modeling initiative that will result in an enterprise data model that will then be used in both the Product API and the Order API</br><img src='./_images/24.png' alt='Minha Figura'></br>"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An organization has implemented the Customer Address API to retrieve customer address information. This API has been deployed to multiple environments and has been configured to enforce client IDs everywhere. \n" +
+        "\n" +
+        "A developer is writing a client application to allow a user to update their address. The developer has found the Customer Address API in Anypoint Exchange and wants to use it in their client application. \n" +
+        "\n" +
+        "What step of gaining access to the API can be performed automatically by Anypoint Platform?",
+    "type": "radio",
+    "options": [
+      "Modify the client application to call the API using the client application's credentials",
+      "Create a new application in Anypoint Exchange for requesting access to the API",
+      "Approve the client application request for the chosen SLA tier",
+      "Request access to the appropriate API Instances deployed to multiple environments using the client application's credentials"
+    ],
+    "correctAnswer": 2,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
   }
 ];
 
