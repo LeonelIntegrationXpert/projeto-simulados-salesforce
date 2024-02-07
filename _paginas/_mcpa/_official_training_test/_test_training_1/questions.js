@@ -133,7 +133,18 @@ var questionsData = [
       "Persistent Object Store"
     ],
     "correctAnswer": 3,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: Persistent Object Store\n" +
+        "*****************************************\n" +
+        ">> Redis distributed cache is performant but NOT out-of-the-box solution in Anypoint Platform\n" +
+        ">> File-storage is neither performant nor out-of-the-box solution in Anypoint Platform\n" +
+        ">> java.util.WeakHashMap needs a completely custom implementation of cache from scratch using Java code\n" +
+        "and is limited to the JVM where it is running. Which means the state in the cache is not worker aware when\n" +
+        "running on multiple workers. This type of cache is local to the worker. So, this is neither out-of-the-box nor\n" +
+        "worker-aware among multiple workers on cloudhub. https://www.baeldung.com/java-weakhashmap\n" +
+        ">> Persistent Object Store is an out-of-the-box solution provided by Anypoint Platform which is performant as\n" +
+        "well as worker aware among multiple workers running on CloudHub. https://docs.mulesoft.com/object-store/\n" +
+        "So, Persistent Object Store is the right answer.",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -177,8 +188,24 @@ var questionsData = [
       "IP allowlist",
       "Client ID enforcement"
     ],
-    "correctAnswer": 0,
-    "justification": "",
+    "correctAnswer": 2,
+    "justification": "Explanation\n" +
+        "Correct Answer: IP whitelist\n" +
+        "*****************************************\n" +
+        ">> OAuth 2.0 access token and Client ID enforcement policies are VERY common to apply on Experience\n" +
+        "APIs as API consumers need to register and access the APIs using one of these mechanisms\n" +
+        ">> JSON threat protection is also VERY common policy to apply on Experience APIs to prevent bad or\n" +
+        "suspicious payloads hitting the API implementations.\n" +
+        ">> IP whitelisting policy is usually very common in Process and System APIs to only whitelist the IP range\n" +
+        "inside the local VPC. But also applied occassionally on some experience APIs where the End User/ API\n" +
+        "Consumers are FIXED.\n" +
+        ">> When we know the API consumers upfront who are going to access certain Experience APIs, then we can\n" +
+        "request for static IPs from such consumers and whitelist them to prevent anyone else hitting the API.\n" +
+        "However, the experience API given in the question/ scenario is intended to work with a consumer mobile\n" +
+        "phone or tablet application. Which means, there is no way we can know all possible IPs that are to be\n" +
+        "whitelisted as mobile phones and tablets can so many in number and any device in the city/state/country/globe.\n" +
+        "So, It is very LEAST LIKELY to apply IP Whitelisting on such Experience APIs whose consumers are\n" +
+        "typically Mobile Phones or Tablets.\n",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -423,7 +450,17 @@ var questionsData = [
       "When regulatory requirements mandate on-premises processing of EVERY data item, including meta-data."
     ],
     "correctAnswer": 3,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: When regulatory requirements mandate on-premises processing of EVERY data item,\n" +
+        "including meta-data.\n*****************************************\n" +
+        "We need NOT require to use Anypoint Platform PCE or PCF for the below. So these options are OUT.\n" +
+        ">> We can make ALL applications highly available across multiple data centers using CloudHub too.\n" +
+        ">> We can use Anypoint VPN and tunneling from CloudHub to connect to ALL backend systems in the\n" +
+        "application network that are deployed in the organization's intranet.\n" +
+        ">> We can use Anypoint VPC and Firewall Rules to make ALL APIs private and NOT exposed to the public\n" +
+        "cloud.\n" +
+        "Only valid reason in the given options that requires to use Anypoint Platform PCE/ PCF is - When regulatory\n" +
+        "requirements mandate on-premises processing of EVERY data item, including meta-data.",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -658,7 +695,17 @@ var questionsData = [
       "Apply a client ID enforcement policy; the specific group of users will configure its client applications to use its specific client credentials."
     ],
     "correctAnswer": 2,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: Apply a basic authentication - LDAP policy; the internal Active Directory will be configured\n" +
+        "as the LDAP source for authenticating users.\n" +
+        "*****************************************\n" +
+        ">> IP Whitelisting does NOT fit for this purpose. Moreover, the users workstations may not necessarily have\n" +
+        "static IPs in the network.\n" +
+        ">> OAuth 2.0 enforcement requires a client provider which isn't in the organizations system components.\n" +
+        ">> It is not an effective approach to let every user create separate client credentials and configure those for\n" +
+        "their usage.\n" +
+        "The effective way it to apply a basic authentication - LDAP policy and the internal Active Directory will be\n" +
+        "configured as the LDAP source for authenticating users.",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -1018,6 +1065,231 @@ var questionsData = [
     ],
     "correctAnswer": 2,
     "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An Anypoint Platform organization has been configured with an external identity provider (IdP) for identity\n" +
+        "management and client management. What credentials or token must be provided to Anypoint CLI to execute\n" +
+        "commands against the Anypoint Platform APIs?",
+    "type": "radio",
+    "options": [
+      "The credentials provided by the IdP for identity management",
+      "The credentials provided by the IdP for client management",
+      "An OAuth 2.0 token generated using the credentials provided by the IdP for client management",
+      "An OAuth 2.0 token generated using the credentials provided by the IdP for identity management"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An organization has created an API-led architecture that uses various API layers to integrate mobile clients\n" +
+        "with a backend system. The backend system consists of a number of specialized components and can be\n" +
+        "accessed via a REST API. The process and experience APIs share the same bounded-context model that is\n" +
+        "different from the backend data model. What additional canonical models, bounded-context models, or\n" +
+        "anti-corruption layers are best added to this architecture to help process data consumed from the backend\n" +
+        "system?\n",
+    "type": "radio",
+    "options": [
+      "Create a bounded-context model for every layer and overlap them when the boundary contexts overlap, letting API developers know about the differences between upstream and downstream data models",
+      "Create a canonical model that combines the backend and API-led models to simplify and unify data models, and minimize data transformations.",
+      "Create a bounded-context model for the system layer to closely match the backend data model, and add an anti-corruption layer to let the different bounded contexts cooperate across the system and process layers",
+      "Create an anti-corruption layer for every API to perform transformation for every data model to match each other, and let data simply travel between APIs to avoid the complexity and overhead of building canonical models"
+    ],
+    "correctAnswer": 2,
+    "justification": "Explanation\n" +
+        "Correct Answer: Create a bounded-context model for the system layer to closely match the backend data\n" +
+        "model, and add an anti-corruption layer to let the different bounded contexts cooperate across the system and\n" +
+        "process layers\n" +
+        "*****************************************\n" +
+        ">> Canonical models are not an option here as the organization has already put in efforts and created\n" +
+        "bounded-context models for Experience and Process APIs.\n" +
+        ">> Anti-corruption layers for ALL APIs is unnecessary and invalid because it is mentioned that experience\n" +
+        "and process APIs share same bounded-context model. It is just the System layer APIs that need to choose their\n" +
+        "approach now.\n" +
+        ">> So, having an anti-corruption layer just between the process and system layers will work well. Also to\n" +
+        "speed up the approach, system APIs can mimic the backend system data model.\n",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "When designing an upstream API and its implementation, the development team has been advised to NOT set\n" +
+        "timeouts when invoking a downstream API, because that downstream API has no SLA that can be relied upon.\n" +
+        "This is the only downstream API dependency of that upstream API.\n" +
+        "Assume the downstream API runs uninterrupted without crashing. What is the impact of this advice?",
+    "type": "radio",
+    "options": [
+      "An SLA for the upstream API CANNOT be provided",
+      "The invocation of the downstream API will run to completion without timing out",
+      "A default timeout of 500 ms will automatically be applied by the Mule runtime in which the upstream API implementation executes",
+      "A toad-dependent timeout of less than 1000 ms will be applied by the Mule runtime in which the downstream API implementation executes"
+    ],
+    "correctAnswer": 0,
+    "justification": "Explanation\n" +
+        "Correct Answer: An SLA for the upstream API CANNOT be provided.\n" +
+        "*****************************************\n" +
+        ">> First thing first, the default HTTP response timeout for HTTP connector is 10000 ms (10 seconds). NOT\n" +
+        "500 ms.\n" +
+        ">> Mule runtime does NOT apply any such \"load-dependent\" timeouts. There is no such behavior currently in\n" +
+        "Mule.\n" +
+        ">> As there is default 10000 ms time out for HTTP connector, we CANNOT always guarantee that the\ninvocation of the downstream API will run to completion without timing out due to its unreliable SLA times.\n" +
+        "If the response time crosses 10 seconds then the request may time out.\n" +
+        "The main impact due to this is that a proper SLA for the upstream API CANNOT be provided.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An API implementation is deployed on a single worker on CloudHub and invoked by external API clients\n" +
+        "(outside of CloudHub). How can an alert be set up that is guaranteed to trigger AS SOON AS that API\n" +
+        "implementation stops responding to API invocations?\n",
+    "type": "radio",
+    "options": [
+      "Implement a heartbeat/health check within the API and invoke it from outside the Anypoint Platform and alert when the heartbeat does not respond",
+      "Configure a \"worker not responding\" alert in Anypoint Runtime Manager",
+      "Handle API invocation exceptions within the calling API client and raise an alert from that API client when the API Is unavailable",
+      "Create an alert for when the API receives no requests within a specified time period"
+    ],
+    "correctAnswer": 1,
+    "justification": "Explanation\n" +
+        "Correct Answer: Configure a “Worker not responding” alert in Anypoint Runtime Manager.\n" +
+        "*****************************************\n" +
+        ">> All the options eventually helps to generate the alert required when the application stops responding.\n" +
+        ">> However, handling exceptions within calling API and then raising alert from API client is inappropriate\n" +
+        "and silly. There could be many API clients invoking the API implementation and it is not ideal to have this\n" +
+        "setup consistently in all of them. Not a realistic way to do.\n" +
+        ">> Implementing a health check/ heartbeat with in the API and calling from outside to detmine the health\n" +
+        "sounds OK but needs extra setup for it and same time there are very good chances of generating false alarms\n" +
+        "when there are any intermittent network issues between external tool calling the health check API on API\n" +
+        "implementation. The API implementation itself may not have any issues but due to some other factors some\n" +
+        "false alarms may go out.\n" +
+        ">> Creating an alert in API Manager when the API receives no requests within a specified time period would\n" +
+        "actually generate realistic alerts but even here some false alarms may go out when there are genuinely no\n" +
+        "requests from API clients.\n" +
+        "The best and right way to achieve this requirement is to setup an alert on Runtime Manager with a condition\n" +
+        "\"Worker not responding\". This would generate an alert AS SOON AS the workers become unresponsive.\n",
+    "referenceLinks": [],
+    "screenshots": ['./_images/40.png'],
+    "videos": []
+  },
+  {
+    "question": "Say, there is a legacy CRM system called CRM-Z which is offering below functions:\n" +
+        "1. Customer creation\n" +
+        "2. Amend details of an existing customer\n" +
+        "3. Retrieve details of a customer\n" +
+        "4. Suspend a customer",
+    "type": "radio",
+    "options": [
+      "Implement a system API named customerManagement which has all the functionalities wrapped in it as various operations/resources",
+      "Implement different system APIs named createCustomer, amendCustomer, retrieveCustomer and suspendCustomer as they are modular and has seperation of concerns",
+      "Implement different system APIs named createCustomerInCRMZ, amendCustomerInCRMZ, retrieveCustomerFromCRMZ and suspendCustomerInCRMZ as they are modular and has seperation of concerns"
+    ],
+    "correctAnswer": 1,
+    "justification": "Explanation\n" +
+        "Correct Answer: Implement different system APIs named createCustomer, amendCustomer, retrieveCustomer\n" +
+        "and suspendCustomer as they are modular and has seperation of concerns\n" +
+        "*****************************************\n" +
+        ">> It is quite normal to have a single API and different Verb + Resource combinations. However, this fits well\n" +
+        "for an Experience API or a Process API but not a best architecture style for System APIs. So, option with just\n" +
+        "one customerManagement API is not the best choice here.\n" +
+        ">> The option with APIs in createCustomerInCRMZ format is next close choice w.r.t modularization and less\n" +
+        "maintenance but the naming of APIs is directly coupled with the legacy system. A better foreseen approach\n" +
+        "would be to name your APIs by abstracting the backend system names as it allows seamless\n" +
+        "replacement/migration of any backend system anytime. So, this is not the correct choice too.\n" +
+        ">> createCustomer, amendCustomer, retrieveCustomer and suspendCustomer is the right approach and is the\n" +
+        "best fit compared to other options as they are both modular and same time got the names decoupled from\n" +
+        "backend system and it has covered all requirements a System API needs.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What API policy would LEAST likely be applied to a Process API?",
+    "type": "radio",
+    "options": [
+      "Custom circuit breaker",
+      "Client ID enforcement",
+      "Rate limiting",
+      "JSON threat protection"
+    ],
+    "correctAnswer": 3,
+    "justification": "Explanation\n" +
+        "Correct Answer: JSON threat protection\n" +
+        "*****************************************\n" +
+        "Fact: Technically, there are no restrictions on what policy can be applied in what layer. Any policy can be\n" +
+        "applied on any layer API. However, context should also be considered properly before blindly applying the\n" +
+        "policies on APIs.\n" +
+        "That is why, this question asked for a policy that would LEAST likely be applied to a Process API.\n" +
+        "From the given options:\n>> All policies except \"JSON threat protection\" can be applied without hesitation to the APIs in Process tier.\n" +
+        ">> JSON threat protection policy ideally fits for experience APIs to prevent suspicious JSON payload coming\n" +
+        "from external API clients. This covers more of a security aspect by trying to avoid possibly malicious and\n" +
+        "harmful JSON payloads from external clients calling experience APIs.\n" +
+        "As external API clients are NEVER allowed to call Process APIs directly and also these kind of malicious and\n" +
+        "harmful JSON payloads are always stopped at experience API layer only using this policy, it is LEAST\n" +
+        "LIKELY that this same policy is again applied on Process Layer API",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A set of tests must be performed prior to deploying API implementations to a staging environment. Due to data security and access restrictions, untested APIs cannot be granted access to the backend systems, so instead mocked data must be used for these tests. The amount of available mocked data and its contents is sufficient to entirely test the API implementations with no active connections to the backend systems. What type of tests should be used to incorporate this mocked data?",
+    "type": "radio",
+    "options": [
+      "Integration tests",
+      "Performance tests",
+      "Functional tests (Blackbox)",
+      "Unit tests (Whitebox)"
+    ],
+    "correctAnswer": 3,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Which of the following best fits the definition of API-led connectivity?",
+    "type": "radio",
+    "options": [
+      "API-led connectivity is not just an architecture or technology but also a way to organize people and processes for efficient IT delivery in the organization",
+      "API-led connectivity is a 3-layered architecture covering Experience, Process and System layers",
+      "API-led connectivity is a technology which enabled us to implement Experience, Process and System layer based APIs"
+    ],
+    "correctAnswer": 0,
+    "justification": "Explanation\n" +
+        "Correct Answer: API-led connectivity is not just an architecture or technology but also a way to organize\n" +
+        "people and processes for efficient IT delivery in the organization.\n" +
+        "*****************************************",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What are the major benefits of MuleSoft proposed IT Operating Model?",
+    "type": "radio",
+    "options": [
+      "1. Decrease the IT delivery gap\n" +
+      "2. Meet various business demands without increasing the IT capacity\n" +
+      "3. Focus on creation of reusable assets first. Upon finishing creation of all the possible assets then\n" +
+      "inform the LOBs in the organization to start using them",
+      "1. Decrease the IT delivery gap\n" +
+      "2. Meet various business demands by increasing the IT capacity and forming various IT departments\n" +
+      "3. Make consumption of assets at the rate of production",
+      "1. Decrease the IT delivery gap\n" +
+      "2. Meet various business demands without increasing the IT capacity\n" +
+      "3. Make consumption of assets at the rate of production"
+    ],
+    "correctAnswer": 2,
+    "justification": "Explanation\n" +
+        "Correct Answer:\n" +
+        "1. Decrease the IT delivery gap\n" +
+        "2. Meet various business demands without increasing the IT capacity\n" +
+        "3. Make consumption of assets at the rate of production.\n" +
+        "*****************************************\n",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
