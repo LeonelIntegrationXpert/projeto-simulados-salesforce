@@ -1272,16 +1272,9 @@ var questionsData = [
     "question": "What are the major benefits of MuleSoft proposed IT Operating Model?",
     "type": "radio",
     "options": [
-      "1. Decrease the IT delivery gap\n" +
-      "2. Meet various business demands without increasing the IT capacity\n" +
-      "3. Focus on creation of reusable assets first. Upon finishing creation of all the possible assets then\n" +
-      "inform the LOBs in the organization to start using them",
-      "1. Decrease the IT delivery gap\n" +
-      "2. Meet various business demands by increasing the IT capacity and forming various IT departments\n" +
-      "3. Make consumption of assets at the rate of production",
-      "1. Decrease the IT delivery gap\n" +
-      "2. Meet various business demands without increasing the IT capacity\n" +
-      "3. Make consumption of assets at the rate of production"
+      "1. Decrease the IT delivery gap</br> 2. Meet various business demands without increasing the IT capacity</br> 3. Focus on creation of reusable assets first. Upon finishing creation of all the possible assets then</br> inform the LOBs in the organization to start using them</br>",
+      "1. Decrease the IT delivery gap</br> 2. Meet various business demands by increasing the IT capacity and forming various IT departments</br> 3. Make consumption of assets at the rate of production</br>",
+      "1. Decrease the IT delivery gap</br> 2. Meet various business demands without increasing the IT capacity</br> 3. Make consumption of assets at the rate of production</br>"
     ],
     "correctAnswer": 2,
     "justification": "Explanation\n" +
