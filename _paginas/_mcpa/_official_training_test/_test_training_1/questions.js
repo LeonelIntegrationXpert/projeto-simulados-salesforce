@@ -335,7 +335,20 @@ var questionsData = [
       "API Manager has an extended outage during the initial deployment of the API implementation"
     ],
     "correctAnswer": 1,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: A CloudHub worker fails with an out-of-memory exception.\n" +
+        "*****************************************\n" +
+        ">> An AWS Region itself going down will definitely result in an outage as it does not matter how many\n" +
+        "workers are assigned to the Mule App as all of those in that region will go down. This is a complete downtime\n" +
+        "and outage.\n" +
+        ">> Extended outage of API manager during initial deployment of API implementation will of course cause\n" +
+        "issues in proper application startup itself as the API Autodiscovery might fail or API policy templates and\n" +
+        "polices may not be downloaded to embed at the time of applicaiton startup etc... there are many reasons that\n" +
+        "could cause issues>> A network outage onpremises would of course cause the Order Management System not accessible and it\n" +
+        "does not matter how many workers are assigned to the app they all will fail and cause outage for sure.\n" +
+        "The only option that does NOT result in a service outage is if a cloudhub worker fails with an out-of-memory\n" +
+        "exception. Even if a worker fails and goes down, there are still other workers to handle the requests and keep\n" +
+        "the API UP and Running. So, this is the right answer.\n",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -350,7 +363,26 @@ var questionsData = [
       "API policies can be applied to the Anypoint Platform APIs so that ONLY certain LOBs have access to specific functions."
     ],
     "correctAnswer": 1,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: By default, the Anypoint CLI and Mule Maven plugin are NOT included in the Mule\n" +
+        "runtime, so are NOT available to be used by deployed Mule applications\n" +
+        "*****************************************\n" +
+        ">> We CANNOT apply API policies to the Anypoint Platform APIs like we can do on our custom written API\n" +
+        "instances. So, option suggesting this is FALSE.\n" +
+        ">> Anypoint Platform APIs can be used for automating interactions with both CloudHub and customer-hosted\n" +
+        "Mule runtimes. Not JUST the CloudHub. So, option opposing this is FALSE.\n" +
+        ">> Mule Maven plugin is NOT mandatory for deployment to customer-hosted Mule runtimes. It just helps\n" +
+        "your CI/CD to have smoother automation. But not a compulsory requirement to deploy. So, option opposing\n" +
+        "this is FALSE.\n" +
+        ">> We DO NOT have any such special roles and permissions on the platform to separately control access for\n" +
+        "some users to have Anypoint CLI and others to have Anypoint Platform APIs. With proper general\n" +
+        "roles/permissions (API Owner, Cloudhub Admin etc..), one can use any of the options (Anypoint CLI or\n" +
+        "Platform APIs). So, option suggesting this is FALSE.\n" +
+        "Only TRUE statement given in the choices is that - Anypoint CLI and Mule Maven plugin are NOT included\n" +
+        "in the Mule runtime, so are NOT available to be used by deployed Mule applications.\n" +
+        "Maven is part of Studio or you can use other Maven installation for development.\n" +
+        "CLI is convenience only. It is one of many ways how to install app to the runtime.\n" +
+        "These are definitely NOT part of anything except your process of deployment or automation.\n",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -413,8 +445,15 @@ var questionsData = [
       "Convince the development team of the Product API to adopt the API data model of the Order API such that the integration logic of the Order API can work with one consistent internal data model</br><img src='./_images/23.png' alt='Minha Figura'></br>",
       "Start an organization-wide data modeling initiative that will result in an enterprise data model that will then be used in both the Product API and the Order API</br><img src='./_images/24.png' alt='Minha Figura'></br>"
     ],
-    "correctAnswer": 2,
-    "justification": "",
+    "correctAnswer": 0,
+    "justification": "Explanation\n" +
+        "Correct Answer: Convince the development team of the product API to adopt the API data model of the Order\n" +
+        "API such that integration logic of the Order API can work with one consistent internal data model\n" +
+        "*****************************************\n" +
+        "Key details to note from the given scenario:\n" +
+        ">> Power relationship between Order API and Product API is customer/supplier\n" +
+        "So, as per below rules of \"Power Relationships\", the caller (in this case Order API) would request for features\n" +
+        "to the called (Product API team) and the Product API team would need to accomodate those requests.",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -551,7 +590,13 @@ var questionsData = [
       "Overloading the backend system"
     ],
     "correctAnswer": 2,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: Guarding against Denial of Service attacks\n" +
+        "*****************************************\n" +
+        ">> Backend system overloading can be handled by enforcing \"Spike Control Policy\"\n" +
+        ">> Logging HTTP requests and responses can be done by enforcing \"Message Logging Policy\"\n" +
+        ">> Credentials can be tamper-proofed using \"Security\" and \"Compliance\" Policies\n" +
+        "However, unfortunately, there is no proper way currently on Anypoint Platform to guard against DOS attacks.",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -908,7 +953,16 @@ var questionsData = [
       "The test runs immediately after the Mule application has been compiled and packaged."
     ],
     "correctAnswer": 3,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: The test runs immediately after the Mule application has been compiled and packaged\n" +
+        "*****************************************\n" +
+        ">> Integration tests are the last layer of tests we need to add to be fully covered.\n" +
+        ">> These tests actually run against Mule running with your full configuration in place and are tested from\n" +
+        "external source as they work in PROD.\n" +
+        ">> These tests exercise the application as a whole with actual transports enabled. So, external systems are\n" +
+        "affected when these tests run.\n" +
+        "So, these tests do NOT run immediately after the Mule application has been compiled and packaged.\n" +
+        "FYI... Unit Tests are the one that run immediately after the Mule application has been compiled and packaged.\n",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -1005,7 +1059,20 @@ var questionsData = [
       "Search Anypoint Exchange for a suitable existing fallback API, and then implement invocations to this fallback API in addition to the Order API"
     ],
     "correctAnswer": 0,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: Search Anypoint exchange for a suitable existing fallback API, and then implement\n" +
+        "invocations to this fallback API in addition to the order API\n" +
+        "*****************************************\n" +
+        ">> It is not ideal and good approach, until unless there is a pre-approved agreement with the API clients that\n" +
+        "they will receive a HTTP 3xx temporary redirect status code and they have to implement fallback logic their\n" +
+        "side to call another API.\n" +
+        ">> Creating separate entry of same Order API in API manager would just create an another instance of it on\n" +
+        "top of same API implementation. So, it does NO GOOD by using clone od same API as a fallback API.\n" +
+        "Fallback API should be ideally a different API implementation that is not same as primary one.\n" +
+        ">> There is NO option currently provided by Anypoint HTTP Connector that allows us to invoke a fallback\n" +
+        "API when we receive certain HTTP status codes in response.\n" +
+        "The only statement TRUE in the given options is to Search Anypoint exchange for a suitable existing fallback\n" +
+        "API, and then implement invocations to this fallback API in addition to the order API.\n",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -1019,8 +1086,21 @@ var questionsData = [
       "Model all API resources and methods to closely mimic the operations of the backend system",
       "Build an Enterprise Data Model (Canonical Data Model) for each backend system and apply it to System APIs"
     ],
-    "correctAnswer": 3,
-    "justification": "",
+    "correctAnswer": 2,
+    "justification": "Explanation\n" +
+        "Correct Answer: Model all API resources and methods to closely mimic the operations of the backend system.\n" +
+        "*****************************************\n" +
+        ">> There are NO fixed and straight best practices while opting data models for APIs. They are completly\n" +
+        "contextual and depends on number of factors. Based upon those factors, an enterprise can choose if they have\n" +
+        "to go with Enterprise Canonical Data Model or Bounded Context Model etc.\n" +
+        ">> One should NEVER expose the technical details of API implementation to their API clients. Only the API\n" +
+        "interface/ RAML is exposed to API clients.\n" +
+        ">> It is true that the RAML definitions of APIs should be as detailed as possible and should reflect most of the\n" +
+        "documentation. However, just that is NOT enough to call your API as best documented API. There should be\n" +
+        "even more documentation on Anypoint Exchange with API Notebooks etc. to make and create a developer\n" +
+        "friendly API and repository..\n" +
+        ">> The best practice always when creating System APIs is to create their API interfaces by modeling their\n" +
+        "resources and methods to closely reflect the operations and functionalities of that backend system.\n",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -1054,7 +1134,27 @@ var questionsData = [
       "The API policy is defined in API Designer for the API specification</br>Then the API policy is ONLY applied to ALL instance of that API specification"
     ],
     "correctAnswer": 0,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: The API policy is defined in API Manager for a specific API instance, and then ONLY\n" +
+        "applied to the specific API instance.\n" +
+        "*****************************************\n" +
+        ">> Once our API specifications are ready and published to Exchange, we need to visit API Manager and\n" +
+        "register an API instance for each API.\n" +
+        ">> API Manager is the place where management of API aspects takes place like addressing NFRs by\n" +
+        "enforcing policies on them.\n" +
+        ">> We can create multiple instances for a same API and manage them differently for different purposes.\n" +
+        ">> One instance can have a set of API policies applied and another instance of same API can have different set\n" +
+        "of policies applied for some other purpose.\n" +
+        ">> These APIs and their instances are defined PER environment basis. So, one need to manage them\n" +
+        "seperately in each environment.\n" +
+        ">> We can ensure that same configuration of API instances (SLAs, Policies etc..) gets promoted when\n" +
+        "promoting to higher environments using platform feature. But this is optional only. Still one can change them\n" +
+        "per environment basis if they have to.\n" +
+        ">> Runtime Manager is the place to manage API Implementations and their Mule Runtimes but NOT APIs\n" +
+        "itself. Though API policies gets executed in Mule Runtimes, We CANNOT enforce API policies in Runtime\n" +
+        "Manager. We would need to do that via API Manager only for a cherry picked instance in an environment.\n" +
+        "So, based on these facts, right statement in the given choices is - \"The API policy is defined in API Manager\n" +
+        "for a specific API instance, and then ONLY applied to the specific API instance\".",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -1105,7 +1205,25 @@ var questionsData = [
       "A better response time for the end user as a result of the APIs being smaller in scope and complexity"
     ],
     "correctAnswer": 1,
-    "justification": "",
+    "justification": "Explanation\n" +
+        "Correct Answer: A higher number of discoverable API-related assets in the application network.\n" +
+        "*****************************************\n" +
+        ">> We do NOT get faster response times in fine-grained approach when compared to coarse-grained approach.\n" +
+        ">> In fact, we get faster response times from a network having coarse-grained APIs compared to a network\n" +
+        "having fine-grained APIs model. The reasons are below.\n" +
+        "Fine-grained approach:\n" +
+        "1. will have more APIs compared to coarse-grained\n" +
+        "2. So, more orchestration needs to be done to achieve a functionality in business process.\n" +
+        "3. Which means, lots of API calls to be made. So, more connections will needs to be established. So, obviously\n" +
+        "more hops, more network i/o, more number of integration points compared to coarse-grained approach where\n" +
+        "fewer APIs with bulk functionality embedded in them.\n" +
+        "4. That is why, because of all these extra hops and added latencies, fine-grained approach will have bit more\n" +
+        "response times compared to coarse-grained.\n" +
+        "5. Not only added latencies and connections, there will be more resources used up in fine-grained approach\n" +
+        "due to more number of APIs.\n" +
+        "That's why, fine-grained APIs are good in a way to expose more number of resuable assets in your network\n" +
+        "and make them discoverable. However, needs more maintenance, taking care of integration points,\n" +
+        "connections, resources with a little compromise w.r.t network hops and response times.",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
@@ -2225,6 +2343,441 @@ var questionsData = [
         "https://blogs.mulesoft.com/biz/api/experience-api-ownership/\n" +
         "https://blogs.mulesoft.com/biz/api/process-api-ownership/\n" +
         "https://blogs.mulesoft.com/biz/api/system-api-ownership/",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An API experiences a high rate of client requests (TPS) vwth small message paytoads. How can usage limits be imposed on the API based on the type of client application?",
+    "type": "radio",
+    "options": [
+      "Use an SLA-based rate limiting policy and assign a client application to a matching SLA tier based on its type",
+      "Use a spike control policy that limits the number of requests for each client application type",
+      "Use a cross-origin resource sharing (CORS) policy to limit resource sharing between client applications, configured by the client application type",
+      "Use a rate limiting policy and a client ID enforcement policy, each configured by the client application type"
+    ],
+    "correctAnswer": 0,
+    "justification": "Explanation\n" +
+        "Correct Answer: Use an SLA-based rate limiting policy and assign a client application to a matching SLA tier\n" +
+        "based on its type.\n" +
+        "*****************************************\n" +
+        ">> SLA tiers will come into play whenever any limits to be imposed on APIs based on client type",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What are 4 important Platform Capabilities offered by Anypoint Platform?",
+    "type": "radio",
+    "options": [
+      "API Versioning, API Runtime Execution and Hosting, API Invocation, API Consumer Engagement",
+      "API Design and Development, API Runtime Execution and Hosting, API Versioning, API Deprecation",
+      "API Design and Development, API Runtime Execution and Hosting, API Operations and Management, API Consumer Engagement",
+      "API Design and Development, API Deprecation, API Versioning, API Consumer Engagement"
+    ],
+    "correctAnswer": 0,
+    "justification": "Explanation\n" +
+        "Correct Answer: API Design and Development, API Runtime Execution and Hosting, API Operations and\n" +
+        "Management, API Consumer Engagement\n" +
+        "*****************************************\n" +
+        ">> API Design and Development - Anypoint Studio, Anypoint Design Center, Anypoint Connectors\n" +
+        ">> API Runtime Execution and Hosting - Mule Runtimes, CloudHub, Runtime Services\n" +
+        ">> API Operations and Management - Anypoint API Manager, Anypoint Exchange\n" +
+        ">> API Consumer Management - API Contracts, Public Portals, Anypoint Exchange, API Notebooks",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A company has created a successful enterprise data model (EDM). The company is committed to building an application network by adopting modern APIs as a core enabler of the company's IT operating model. At what API tiers (experience, process, system) should the company require reusing the EDM when designing modern API data models?",
+    "type": "radio",
+    "options": [
+      "At the experience and process tiers",
+      "At the experience and system tiers",
+      "At the process and system tiers",
+      "At the experience, process, and system tiers"
+    ],
+    "correctAnswer": 2,
+    "justification": "Explanation\n" +
+        "Correct Answer: At the process and system tiers\n" +
+        "*****************************************\n" +
+        ">> Experience Layer APIs are modeled and designed exclusively for the end user's experience. So, the data\n" +
+        "models of experience layer vary based on the nature and type of such API consumer. For example, Mobile\n" +
+        "consumers will need light-weight data models to transfer with ease on the wire, where as web-based\n" +
+        "consumers will need detailed data models to render most of the info on web pages, so on. So, enterprise data\n" +
+        "models fit for the purpose of canonical models but not of good use for experience APIs.\n" +
+        ">> That is why, EDMs should be used extensively in process and system tiers but NOT in experience tier.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What correctly characterizes unit tests of Mule applications?",
+    "type": "radio",
+    "options": [
+      "They test the validity of input and output of source and target systems",
+      "They must be run in a unit testing environment with dedicated Mule runtimes for the environment",
+      "They must be triggered by an external client tool or event source",
+      "They are typically written using MUnit to run in an embedded Mule runtime that does not require external connectivity"
+    ],
+    "correctAnswer": 3,
+    "justification": "Explanation\n" +
+        "Correct Answer: They are typically written using MUnit to run in an embedded Mule runtime that does not\n" +
+        "require external connectivity.\n" +
+        "*****************************************\n" +
+        "Below TWO are characteristics of Integration Tests but NOT unit tests:\n" +
+        ">> They test the validity of input and output of source and target systems.\n" +
+        ">> They must be triggered by an external client tool or event source.\n" +
+        "It is NOT TRUE that Unit Tests must be run in a unit testing environment with dedicated Mule runtimes for\n" +
+        "the environment.\n" +
+        "MuleSoft offers MUnit for writing Unit Tests and they run in an embedded Mule Runtime without needing\n" +
+        "any separate/ dedicated Runtimes to execute them. They also do NOT need any external connectivity as MUnit\n" +
+        "supports mocking via stubs.\n" +
+        "https://dzone.com/articles/munit-framework",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Which of the following sequence is correct?",
+    "type": "radio",
+    "options": [
+      "API Client implementes logic to call an API >> API Consumer requests access to API >> API Implementation routes the request to >> API",
+      "API Consumer requests access to API >> API Client implementes logic to call an API >> API routes the request to >> API Implementation",
+      "API Consumer implementes logic to call an API >> API Client requests access to API >> API Implementation routes the request to >> API",
+      "API Client implementes logic to call an API >> API Consumer requests access to API >> API routes the request to >> API Implementation"
+    ],
+    "correctAnswer": 1,
+    "justification": "Explanation\n" +
+        "Correct Answer: API Consumer requests access to API >> API Client implementes logic to call an API >>\n" +
+        "API routes the request to >> API Implementation\n" +
+        "*****************************************\n" +
+        ">> API consumer does not implement any logic to invoke APIs. It is just a role. So, the option stating \"API\n" +
+        "Consumer implementes logic to call an API\" is INVALID.\n" +
+        ">> API Implementation does not route any requests. It is a final piece of logic where functionality of target\n" +
+        "systems is exposed. So, the requests should be routed to the API implementation by some other entity. So, the\n" +
+        "options stating \"API Implementation routes the request to >> API\" is INVALID\n" +
+        ">> The statements in one of the options are correct but sequence is wrong. The sequence is given as \"API\n" +
+        "Client implementes logic to call an API >> API Consumer requests access to API >> API routes the request to\n" +
+        ">> API Implementation\". Here, the statements in the options are VALID but sequence is WRONG.\n" +
+        ">> Right option and sequence is the one where API consumer first requests access to API on Anypoint\n" +
+        "Exchange and obtains client credentials. API client then writes logic to call an API by using the access client\n" +
+        "credentials requested by API consumer and the requests will be routed to API implementation via the API\n" +
+        "which is managed by API Manager.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A system API is deployed to a primary environment as well as to a disaster recovery (DR) environment, with different DNS names in each environment. A process API is a client to the system API and is being rate limited by the system API, with different limits in each of the environments. The system API's DR environment provides only 20% of the rate limiting offered by the primary environment. What is the best API fault-tolerant invocation strategy to reduce overall errors in the process API, given these conditions and constraints?",
+    "type": "radio",
+    "options": [
+      "Invoke the system API deployed to the primary environment; add timeout and retry logic to the process API to avoid intermittent failures; if it still fails, invoke the system API deployed to the DR environment",
+      "Invoke the system API deployed to the primary environment; add retry logic to the process API to handle intermittent failures by invoking the system API deployed to the DR environment",
+      "In parallel, invoke the system API deployed to the primary environment and the system API deployed to the DR environment; add timeout and retry logic to the process API to avoid intermittent failures; add logic to the process API to combine the results",
+      "Invoke the system API deployed to the primary environment; add timeout and retry logic to the process API to avoid intermittent failures; if it still fails, invoke a copy of the process API deployed to the DR environment"
+    ],
+    "correctAnswer": 0,
+    "justification": "Explanation\n" +
+        "Explanation\n" +
+        "Correct Answer: Invoke the system API deployed to the primary environment; add timeout and retry logic to\n" +
+        "the process API to avoid intermittent failures; if it still fails, invoke the system API deployed to the DR\n" +
+        "environment\n" +
+        "*****************************************\n" +
+        "There is one important consideration to be noted in the question which is - System API in DR environment\n" +
+        "provides only 20% of the rate limiting offered by the primary environment. So, comparitively, very less calls\n" +
+        "will be allowed into the DR environment API opposed to its primary environment. With this in mind, lets\n" +
+        "analyse what is the right and best fault-tolerant invocation strategy.\n" +
+        "1. Invoking both the system APIs in parallel is definitely NOT a feasible approach because of the 20%\n" +
+        "limitation we have on DR environment. Calling in parallel every time would easily and quickly exhaust the\n" +
+        "rate limits on DR environment and may not give chance to genuine intermittent error scenarios to let in during\n" +
+        "the time of need.\n" +
+        "2. Another option given is suggesting to add timeout and retry logic to process API while invoking primary\n" +
+        "environment's system API. This is good so far. However, when all retries failed, the option is suggesting to\n" +
+        "invoke the copy of process API on DR environment which is not right or recommended. Only system API is\n" +
+        "the one to be considered for fallback and not the whole process API. Process APIs usually have lot of heavy\n" +
+        "orchestration calling many other APIs which we do not want to repeat again by calling DR's process API. So\n" +
+        "this option is NOT right.\n" +
+        "3. One more option given is suggesting to add the retry (no timeout) logic to process API to directly retry on\n" +
+        "DR environment's system API instead of retrying the primary environment system API first. This is not at all a\n" +
+        "proper fallback. A proper fallback should occur only after all retries are performed and exhausted on Primary\n" +
+        "environment first. But here, the option is suggesting to directly retry fallback API on first failure itself without\n" +
+        "trying main API. So, this option is NOT right too.\n" +
+        "This leaves us one option which is right and best fit.\n" +
+        "- Invoke the system API deployed to the primary environment\n" +
+        "- Add Timeout and Retry logic on it in process API\n" +
+        "- If it fails even after all retries, then invoke the system API deployed to the DR environment.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What is true about the technology architecture of Anypoint VPCs?",
+    "type": "radio",
+    "options": [
+      "The private IP address range of an Anypoint VPC is automatically chosen by CloudHub",
+      "Traffic between Mule applications deployed to an Anypoint VPC and on-premises systems can stay within a private network",
+      "Each CloudHub environment requires a separate Anypoint VPC\n",
+      "VPC peering can be used to link the underlying AWS VPC to an on-premises (non AWS) private network"
+    ],
+    "correctAnswer": 1,
+    "justification": "Explanation\n" +
+        "Correct Answer: Traffic between Mule applications deployed to an Anypoint VPC and on-premises systems\n" +
+        "can stay within a private network\n" +
+        "*****************************************\n" +
+        ">> The private IP address range of an Anypoint VPC is NOT automatically chosen by CloudHub. It is chosen\n" +
+        "by us at the time of creating VPC using thr CIDR blocks.\n" +
+        "CIDR Block: The size of the Anypoint VPC in Classless Inter-Domain Routing (CIDR) notation.\n" +
+        "For example, if you set it to 10.111.0.0/24, the Anypoint VPC is granted 256 IP addresses from 10.111.0.0 to\n" +
+        "10.111.0.255.\n" +
+        "Ideally, the CIDR Blocks you choose for the Anypoint VPC come from a private IP space, and should not\n" +
+        "overlap with any other Anypoint VPC’s CIDR Blocks, or any CIDR Blocks in use in your corporate network.\nthat each CloudHub environment requires a separate Anypoint VPC. Once an Anypoint VPC is created, we\n" +
+        "can choose a same VPC by multiple environments. However, it is generally a best and recommended practice\n" +
+        "to always have seperate Anypoint VPCs for Non-Prod and Prod environments.\n" +
+        ">> We use Anypoint VPN to link the underlying AWS VPC to an on-premises (non AWS) private network.\n" +
+        "NOT VPC Peering.\n",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What condition requires using a CloudHub Dedicated Load Balancer?",
+    "type": "radio",
+    "options": [
+      "When cross-region load balancing is required between separate deployments of the same Mule application",
+      "When custom DNS names are required for API implementations deployed to customer-hosted Mule runtimes",
+      "When API invocations across multiple CloudHub workers must be load balanced",
+      "When server-side load-balanced TLS mutual authentication is required between API implementations and API clients"
+    ],
+    "correctAnswer": 3,
+    "justification": "Explanation\n" +
+        "Correct Answer: When server-side load-balanced TLS mutual authentication is required between API\n" +
+        "implementations and API clients\n" +
+        "*****************************************\n" +
+        "Fact/ Memory Tip: Although there are many benefits of CloudHub Dedicated Load balancer, TWO important\n" +
+        "things that should come to ones mind for considering it are:\n" +
+        ">> Having URL endpoints with Custom DNS names on CloudHub deployed apps\n" +
+        ">> Configuring custom certificates for both HTTPS and Two-way (Mutual) authentication.\n" +
+        "Coming to the options provided for this question:\n" +
+        ">> We CANNOT use DLB to perform cross-region load balancing between separate deployments of the same\n" +
+        "Mule application.\n" +
+        ">> We can have mapping rules to have more than one DLB URL pointing to same Mule app. But vicevera\n" +
+        "(More than one Mule app having same DLB URL) is NOT POSSIBLE\n" +
+        ">> It is true that DLB helps to setup custom DNS names for Cloudhub deployed Mule apps but NOT true for\n" +
+        "apps deployed to Customer-hosted Mule Runtimes.\n" +
+        ">> It is true to that we can load balance API invocations across multiple CloudHub workers using DLB but it\n" +
+        "is NOT A MUST. We can achieve the same (load balancing) using SLB (Shared Load Balancer) too. We DO\n" +
+        "NOT necessarily require DLB for achieve it.\n" +
+        "So the only right option that fits the scenario and requires us to use DLB is when TLS mutual authentication is\n" +
+        "required between API implementations and API clients.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Due to a limitation in the backend system, a system API can only handle up to 500 requests per second. What is the best type of API policy to apply to the system API to avoid overloading the backend system?",
+    "type": "radio",
+    "options": [
+      "Rate limiting",
+      "HTTP caching",
+      "Rate limiting - SLA based",
+      "Spike control"
+    ],
+    "correctAnswer": 3,
+    "justification": "Explanation\n" +
+        "Correct Answer: Spike control\n" +
+        "*****************************************\n" +
+        ">> First things first, HTTP Caching policy is for purposes different than avoiding the backend system from\n" +
+        "overloading. So this is OUT.\n" +
+        ">> Rate Limiting and Throttling/ Spike Control policies are designed to limit API access, but have different\n" +
+        "intentions.\n" +
+        ">> Rate limiting protects an API by applying a hard limit on its access.\n" +
+        ">> Throttling/ Spike Control shapes API access by smoothing spikes in traffic.\n" +
+        "That is why, Spike Control is the right option.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "In an organization, the InfoSec team is investigating Anypoint Platform related data traffic. </br>From where does most of the data available to Anypoint Platform for monitoring and alerting originate?",
+    "type": "radio",
+    "options": [
+      "From the Mule runtime or the API implementation, depending on the deployment model",
+      "From various components of Anypoint Platform, such as the Shared Load Balancer, VPC, and Mule runtimes",
+      "From the Mule runtime or the API Manager, depending on the type of data",
+      "From the Mule runtime irrespective of the deployment model"
+    ],
+    "correctAnswer": 3,
+    "justification": "Explanation\n" +
+        "Correct Answer: From the Mule runtime irrespective of the deployment model\n" +
+        "*****************************************\n" +
+        ">> Monitoring and Alerting metrics are always originated from Mule Runtimes irrespective of the deployment\n" +
+        "model.\n" +
+        ">> It may seems that some metrics (Runtime Manager) are originated from Mule Runtime and some are (API\n" +
+        "Invocations/ API Analytics) from API Manager. However, this is realistically NOT TRUE. The reason is, API\n" +
+        "manager is just a management tool for API instances but all policies upon applying on APIs eventually gets\n" +
+        "executed on Mule Runtimes only (Either Embedded or API Proxy).\n" +
+        ">> Similarly all API Implementations also run on Mule Runtimes.\n" +
+        "So, most of the day required for monitoring and alerts are originated fron Mule Runtimes only irrespective of\n" +
+        "whether the deployment model is MuleSoft-hosted or Customer-hosted or Hybrid.\n",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "How are an API implementation, API client, and API consumer combined to invoke and process an API?",
+    "type": "radio",
+    "options": [
+      "The API consumer creates an API implementation, which receives API invocations from an API such that they are processed for an API client",
+      "The API client creates an API consumer, which receives API invocations from an API such that they are processed for an API implementation",
+      "The ApI consumer creates an API client, which sends API invocations to an API such that they are processed by an API implementation",
+      "The ApI client creates an API consumer, which sends API invocations to an API such that they are processed by an API implementation"
+    ],
+    "correctAnswer": 2,
+    "justification": "Explanation\n" +
+        "Correct Answer: The API consumer creates an API client, which sends API invocations to an API such that\n" +
+        "they are processed by an API implementation\n" +
+        "*****************************************\n" +
+        "Terminology:\n" +
+        ">> API Client - It is a piece of code or program the is written to invoke an API\n" +
+        ">> API Consumer - An owner/entity who owns the API Client. API Consumers write API clients.\n" +
+        ">> API - The provider of the API functionality. Typically an API Instance on API Manager where they are\n" +
+        "managed and operated.\n" +
+        ">> API Implementation - The actual piece of code written by API provider where the functionality of the API\n" +
+        "is implemented. Typically, these are Mule Applications running on Runtime Manager.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "Mule applications that implement a number of REST APIs are deployed to their own subnet that is inaccessible from outside the organization. </br>External business-partners need to access these APIs, which are only allowed to be invoked from a separate subnet dedicated to partners - called Partner-subnet. This subnet is accessible from the public internet, which allows these external partners to reach it. </br>Anypoint Platform and Mule runtimes are already deployed in Partner-subnet. These Mule runtimes can already access the APIs. </br>What is the most resource-efficient solution to comply with these requirements, while having the least impact on other applications that are currently using the APIs?",
+    "type": "radio",
+    "options": [
+      "Implement (or generate) an API proxy Mule application for each of the APIs, then deploy the API proxies to the Mule runtimes",
+      "Redeploy the API implementations to the same servers running the Mule runtimes",
+      "Add an additional endpoint to each API for partner-enablement consumption",
+      "Duplicate the APIs as Mule applications, then deploy them to the Mule runtimes"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "An organization uses various cloud-based SaaS systems and multiple on-premises systems. The on-premises systems are an important part of the organization's application network and can only be accessed from within the organization's intranet. </br>What is the best way to configure and use Anypoint Platform to support integrations with both the cloud-based SaaS systems and on-premises systems?",
+    "type": "radio",
+    "options": [
+      "Use CloudHub-deployed Mule runtimes in an Anypoint VPC managed by Anypoint Platform Private Cloud Edition control plane</br><img src='./_images/43.png' alt='Minha Figura'></br>",
+      "Use CloudHub-deployed Mule runtimes in the shared worker cloud managed by the MuleSoft-hosted Anypoint Platform control plane</br><img src='./_images/44.png' alt='Minha Figura'></br>",
+      "Use an on-premises installation of Mule runtimes that are completely isolated with NO external network access, managed by the Anypoint Platform Private Cloud Edition control plane</br><img src='./_images/45.png' alt='Minha Figura'></br>",
+      "Use a combination of Cloud Hub-deployed and manually provisioned on-premises Mule runtimes managed by the MuleSoft-hosted Anypoint Platform control plane</br><img src='./_images/46.png' alt='Minha Figura'></br>"
+    ],
+    "correctAnswer": 0,
+    "justification": "Explanation\nCorrect Answer: Use a combination of CloudHub-deployed and manually provisioned on-premises Mule\n" +
+        "runtimes managed by the MuleSoft-hosted Platform control plane.\n" +
+        "*****************************************\n" +
+        "Key details to be taken from the given scenario:\n" +
+        ">> Organization uses BOTH cloud-based and on-premises systems\n" +
+        ">> On-premises systems can only be accessed from within the organization's intranet\n" +
+        "Let us evaluate the given choices based on above key details:\n" +
+        ">> CloudHub-deployed Mule runtimes can ONLY be controlled using MuleSoft-hosted control plane. We\n" +
+        "CANNOT use Private Cloud Edition's control plane to control CloudHub Mule Runtimes. So, option\n" +
+        "suggesting this is INVALID\n" +
+        ">> Using CloudHub-deployed Mule runtimes in the shared worker cloud managed by the MuleSoft-hosted\n" +
+        "Anypoint Platform is completely IRRELEVANT to given scenario and silly choice. So, option suggesting this\n" +
+        "is INVALID\n" +
+        ">> Using an on-premises installation of Mule runtimes that are completely isolated with NO external network\n" +
+        "access, managed by the Anypoint Platform Private Cloud Edition control plane would work for On-premises\n" +
+        "integrations. However, with NO external access, integrations cannot be done to SaaS-based apps. Moreover\n" +
+        "CloudHub-hosted apps are best-fit for integrating with SaaS-based applications. So, option suggesting this is\n" +
+        "BEST WAY.\n" +
+        "The best way to configure and use Anypoint Platform to support these mixed/hybrid integrations is to use a\n" +
+        "combination of CloudHub-deployed and manually provisioned on-premises Mule runtimes managed by the\n" +
+        "MuleSoft-hosted Platform control plane.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "The application network is recomposable: it is built for change because it \"bends but does not break\"",
+    "type": "radio",
+    "options": [
+      "TRUE",
+      "FALSE"
+    ],
+    "correctAnswer": 0,
+    "justification": "",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "A company wants to move its Mule API implementations into production as quickly as possible. To protect access to all Mule application data and metadata, the company requires that all Mule applications be deployed to the company's customer-hosted infrastructure within the corporate firewall. What combination of runtime plane and control plane options meets these project lifecycle goals?",
+    "type": "radio",
+    "options": [
+      "Manually provisioned customer-hosted runtime plane and customer-hosted control plane",
+      "MuleSoft-hosted runtime plane and customer-hosted control plane",
+      "Manually provisioned customer-hosted runtime plane and MuleSoft-hosted control plane",
+      "iPaaS provisioned customer-hosted runtime plane and MuleSoft-hosted control plane\n"
+    ],
+    "correctAnswer": 0,
+    "justification": "Explanation\n" +
+        "Correct Answer: Manually provisioned customer-hosted runtime plane and customer-hosted control plane\n" +
+        "*****************************************\n" +
+        "There are two key factors that are to be taken into consideration from the scenario given in the question.\n" +
+        ">> Company requires both data and metadata to be resided within the corporate firewall\n" +
+        ">> Company would like to go with customer-hosted infrastructure.\n" +
+        "Any deployment model that is to deal with the cloud directly or indirectly (Mulesoft-hosted or Customer's own\n" +
+        "cloud like Azure, AWS) will have to share atleast the metadata.\n" +
+        "Application data can be controlled inside firewall by having Mule Runtimes on customer hosted runtime\n" +
+        "plane. But if we go with Mulsoft-hosted/ Cloud-based control plane, the control plane required atleast some\n" +
+        "minimum level of metadata to be sent outside the corporate firewall.\n" +
+        "As the customer requirement is pretty clear about the data and metadata both to be within the corporate\n" +
+        "firewall, even though customer wants to move to production as quickly as possible, unfortunately due to the\n" +
+        "nature of their security requirements, they have no other option but to go with manually provisioned\n" +
+        "customer-hosted runtime plane and customer-hosted control plane.",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "What Mule application can have API policies applied by Anypoint Platform to the endpoint exposed by that Mule application?",
+    "type": "radio",
+    "options": [
+      "A Mule application that accepts requests over HTTP/1.x</br><img src='./_images/47.png' alt='Minha Figura'></br>",
+      "A Mule application that accepts JSON requests over TCP but is NOT required to provide a response\n</br><img src='./_images/48.png' alt='Minha Figura'></br>",
+      "A Mute application that accepts JSON requests over WebSocket</br><img src='./_images/49.png' alt='Minha Figura'></br>",
+      "A Mule application that accepts gRPC requests over HTTP/2</br><img src='./_images/50.png' alt='Minha Figura'></br>"
+    ],
+    "correctAnswer": 0,
+    "justification": "Explanation\n" +
+        "Correct Answer: Option A\n" +
+        "*****************************************\n" +
+        ">> Anypoint API Manager and API policies are applicable to all types of HTTP/1.x APIs.\n" +
+        ">> They are not applicable to WebSocket APIs, HTTP/2 APIs and gRPC APIs",
+    "referenceLinks": [],
+    "screenshots": [],
+    "videos": []
+  },
+  {
+    "question": "In which layer of API-led connectivity, does the business logic orchestration reside?",
+    "type": "radio",
+    "options": [
+      "System Layer",
+      "Experience Layer",
+      "Process Layer"
+    ],
+    "correctAnswer": 2,
+    "justification": "Explanation\n" +
+        "Correct Answer: Process Layer\n" +
+        "*****************************************\n" +
+        ">> Experience layer is dedicated for enrichment of end user experience. This layer is to meet the needs of\n" +
+        "different API clients/ consumers.\n>> System layer is dedicated to APIs which are modular in nature and implement/ expose various individual\n" +
+        "functionalities of backend systems\n" +
+        ">> Process layer is the place where simple or complex business orchestration logic is written by invoking one\n" +
+        "or many System layer modular APIs\n" +
+        "So, Process Layer is the right answer",
     "referenceLinks": [],
     "screenshots": [],
     "videos": []
