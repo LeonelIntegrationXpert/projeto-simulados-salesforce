@@ -1237,7 +1237,7 @@ var questionsData = [
     "type": "radio",
     "options": [
       "The new API version must be shared public through Anypoint Exchange",
-      "Na API mocking service Mule application must be deployed to CloudHub and then associated with the new API version in the organization’s Anypoint Exchange public portal",
+      "In API mocking service Mule application must be deployed to CloudHub and then associated with the new API version in the organization’s Anypoint Exchange public portal",
       "Users who need access to the new API version must be added to the appropriate role in Anypoint Platform",
       "A fully functional API implementation of the new API version must be deployed and then associated with the new API version in the organization’s Anypoint Exchange public portal"
     ],
