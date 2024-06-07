@@ -933,8 +933,8 @@ var questionsData = [
     "type": "radio",
     "options": [
       "Deploy to a customer-hosted runtime plane</br>Configure the organization’s firewall to allow connections to the external SaaS systems",
-      "Deploy to the Mulesoft-hosted runtime plane</br>Configure the network with na</br>Anypoint VPC that is configured with na IPsec tunnel to the on-premises network",
-      "Deploy to a customer hosted runtime plane</brConfigure the network with an Anypoint VPC that is configured with VPC peering to each external SaaS network",
+      "Deploy to the Mulesoft-hosted runtime plane</br>Configure the network with an Anypoint VPC that is configured with na IPsec tunnel to the on-premises network",
+      "Deploy to a customer hosted runtime plane</br>Configure the network with an Anypoint VPC that is configured with VPC peering to each external SaaS network",
       "Deploy to the Mulesoft hosted runtime plane</br>Configure a CloudHub dedicated load balancer that is configured with an AWS (not CloudHub) Direct Connect tunnel to the on-premises network"
     ],
     "correctAnswer": 1,
