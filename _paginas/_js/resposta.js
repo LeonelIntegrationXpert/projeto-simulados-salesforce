@@ -36,41 +36,53 @@ function getHeader() {
   var currentPath = window.location.pathname;
 
   return `
-		  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="./index.html"><img src="./_paginas/_img/favicon.ico"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Administrator
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives1-2/index.html">Configuration and Setup (Objectives 1-2)</a></li>
-            <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives3-4/index.html">Configuration and Setup (Objectives 3-4)</a></li>
-            <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives5-6/index.html">Configuration and Setup (Objectives 5-6)</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Mulesoft
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="./_paginas/_mcd/_official_training_test/_test_training_1/index.html">MCD - LEVEL 1 (Training platform)</a></li>
-			<li><a class="dropdown-item" href="./_paginas/_mcd_2/_official_training_test/_test_training_1/index.html">MCD - LEVEL 2 (Training platform)</a></li>
-            <li><a class="dropdown-item" href="./_paginas/_mcpa/_official_training_test/_test_training_1/index.html">MCPA - LEVEL 1 (Training platform)</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>`;
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html"><img src="./_paginas/_img/favicon.ico"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Administrator
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives1-2/index.html">Configuration and Setup (Objectives 1-2)</a></li>
+                  <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives3-4/index.html">Configuration and Setup (Objectives 3-4)</a></li>
+                  <li><a class="dropdown-item" href="./_paginas/_administrator/_configuration_and_setup/_objectives5-6/index.html">Configuration and Setup (Objectives 5-6)</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Mulesoft
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="./_paginas/_mcd/_official_training_test/_test_training_1/index.html">MCD - LEVEL 1 (Training platform)</a></li>
+                  <li><a class="dropdown-item" href="./_paginas/_mcd_2/_official_training_test/_test_training_1/index.html">MCD - LEVEL 2 (Training platform)</a></li>
+                  <li><a class="dropdown-item" href="./_paginas/_mcpa/_official_training_test/_test_training_1/index.html">MCPA - LEVEL 1 (Training platform)</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Concursos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="./_paginas/_simuladoJava/_official_training_test/index.html">Simulado Java</a></li>
+                  <li><a class="dropdown-item" href="./_paginas/_simuladoPhp/_official_training_test/index.html">Simulado PHP</a></li>
+                  <li><a class="dropdown-item" href="./_paginas/_simuladoJavaScript/_official_training_test/index.html">Simulado JavaScript</a></li>
+                  <li><a class="dropdown-item" href="./_paginas/_simuladoNodeJs/_official_training_test/index.html">Simulado Node.js</a></li>
+                  <li><a class="dropdown-item" href="./_paginas/_simuladoBancoDeDados/_official_training_test/index.html">Simulado Banco de Dados Relacional SQL</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>`;
 }
 
 function getFooter() {
